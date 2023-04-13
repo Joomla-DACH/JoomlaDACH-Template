@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?><extension type="template" version="4.0.0" method="upgrade">
+	<name>Joomla DACH 2023</name>
+	<version>1.0.0</version>
+	<description>Joomla DACH Template 2023</description>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<author>djumla GmbH</author>
+	<authoremail>kontakt@jabev.de</authoremail>
+	<copyright>Copyright (C) 2023 J and Beyond e.V. All rights reserved.</copyright>
+	<creationDate>12-Apr-2023</creationDate>
+	<version>1.0</version>
+	<files>
+		<filename>index.php</filename>
+		<filename>component.php</filename>
+		<filename>error.php</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>template_preview.png</filename>
+		<filename>favicon.ico</filename>
+		<folder>assets</folder>
+		<folder>favicon_package</folder>
+		<folder>html</folder>
+		<folder>img</folder>
+		<folder>language</folder>
+	</files>
+	<positions>
+		<position>content_top</position>
+		<position>content_bottom</position>
+	</positions>
+	<languages folder="language">
+		<language tag="de-DE">de-DE/de-DE.tpl_joomladach2023.ini</language>
+		<language tag="de-DE">de-DE/de-DE.tpl_joomladach2023.sys.ini</language>
+	</languages>
+</extension>

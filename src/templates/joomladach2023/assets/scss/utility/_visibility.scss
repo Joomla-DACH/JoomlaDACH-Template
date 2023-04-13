@@ -1,0 +1,20 @@
+@include critical(true) {
+  $breakpoints: ('sm': '576px', 'md': '768px', 'lg': '992px', 'xl': '1320px', 'xxl': '1680');
+
+  @each $breakpoint, $width in $breakpoints {
+    .min-#{$breakpoint} {
+      display: none !important;
+    }
+    .max-#{$breakpoint} {
+      display: inherit !important;
+    }
+    @media screen and (min-width: #{$width}) {
+      .min-#{$breakpoint} {
+        display: inherit !important;
+      }
+      .max-#{$breakpoint} {
+        display: none !important;
+      }
+    }
+  }
+}

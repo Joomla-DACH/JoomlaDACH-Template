@@ -1,0 +1,106 @@
+@include critical(true) {
+  // Column Classes
+  @for $i from 1 through 6 {
+    .columns-#{$i},
+    .grid--col#{$i} {
+      display: grid;
+      grid-gap: var(--space-large);
+      grid-auto-flow: dense;
+      @include xl {
+        grid-gap: var(--space-xlarge);
+      }
+      @if $i <= 2 {
+        @include md {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @if $i == 3 {
+        @include md {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      @include lg {
+        grid-template-columns: repeat(#{$i}, 1fr);
+      }
+    }
+  }
+  .grid--col-1-2 {
+    display: grid;
+    grid-gap: var(--space-large);
+    @include xl {
+      grid-gap: var(--space-xxlarge);
+    }
+    @include md {
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+  .grid--col-2-1 {
+    display: grid;
+    grid-gap: var(--space-large);
+    @include xl {
+      grid-gap: var(--space-xxlarge);
+    }
+    @include md {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+  .grid--col-2-3 {
+    display: grid;
+    grid-gap: var(--space-large);
+    @include xl {
+      grid-gap: var(--space-xxlarge);
+    }
+    @include md {
+      grid-template-columns: 2fr 3fr;
+    }
+  }
+  .grid--col-3-2 {
+    display: grid;
+    grid-gap: var(--space-large);
+    @include xl {
+      grid-gap: var(--space-xxlarge);
+    }
+    @include md {
+      grid-template-columns: 3fr 2fr;
+    }
+  }
+  .grid--col-3-1 {
+    display: grid;
+    grid-gap: var(--space-large);
+    @include xl {
+      grid-gap: var(--space-xxlarge);
+    }
+    @include md {
+      grid-template-columns: 3fr 1fr;
+    }
+  }
+  .grid--col-1-3 {
+    display: grid;
+    grid-gap: var(--space-large);
+    @include xl {
+      grid-gap: var(--space-xxlarge);
+    }
+    @include md {
+      grid-template-columns: 1fr 3fr;
+    }
+  }
+
+  // Vertical Alignment
+  .grid--align-center {
+    align-items: center;
+  }
+  .grid--align-top {
+    align-items: start;
+  }
+  .grid--align-bottom {
+    align-items: end;
+  }
+
+  @include md {
+    @for $i from 1 through 6 {
+      .griditem--span#{$i} {
+        grid-column: span #{$i};
+      }
+    }
+  }
+}

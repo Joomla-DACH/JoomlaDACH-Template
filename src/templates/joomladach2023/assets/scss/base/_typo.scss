@@ -1,0 +1,24 @@
+@include critical(true) {
+  body,
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  // Utilities
+
+  $fs: xxs, xs, df, md, lg, xl, xxl, xxxl;
+
+  @each $size in $fs {
+    .txt-#{$size} {
+      font-size: var(--size-#{$size});
+    }
+  }
+
+  $fws: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+
+  @each $fw in $fws {
+    .txt-#{$fw} {
+      font-weight: $fw;
+    }
+  }
+}

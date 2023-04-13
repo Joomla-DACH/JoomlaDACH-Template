@@ -1,0 +1,66 @@
+// Breakpoints
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Large tablets and desktops
+$screen-xl-min: 1320px;
+
+// Large tablets and desktops
+$screen-xxl-min: 1680px;
+
+
+// Color
+
+:root {
+  --wtt-orange: #FD9901;
+  --wtt-cyan: #009ED1;
+  --wtt-green: #B0D400;
+  --wtt-blue: #2F4D5D;
+  --wtt-text: #7F7F7F;
+  --wtt-textdark: #4E4E4D;
+}
+
+// Typo
+:root {
+  --wtt-basefont: 'DINPro', sans-serif;
+  --size-xxxl: 4.05rem;
+  --size-xxl: 3.45rem;
+  --size-xl: 1.7rem;
+  --size-lg: 1.6rem;
+  --size-md: 1rem;
+  --size-df: 1rem;
+  --size-xs: .8rem;
+  --size-xxs: .75rem;
+  @include lg {
+    --size-md: 1.3rem;
+  }
+}
+
+// Spacer
+:root {
+  --spaceunit: 8px;
+  --space-xxxlarge: calc(var(--spaceunit) * 10);
+  --space-xxlarge: calc(var(--spaceunit) * 5);
+  --space-xlarge: calc(var(--spaceunit) * 4);
+  --space-large: calc(var(--spaceunit) * 3);
+  --space-base: calc(var(--spaceunit) * 2);
+  --space-small: calc(var(--spaceunit) * 1.5);
+  --space-smaller: calc(var(--spaceunit) * 1);
+  @include xxl {
+    --space-xxxlarge: calc(var(--spaceunit) * 12);
+  }
+}
+
+// Utilities
+
+:root {
+  --contentcontainerwidth: 1460px;
+  --headerbarheight: 70px;
+}
