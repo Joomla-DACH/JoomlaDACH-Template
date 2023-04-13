@@ -4,8 +4,8 @@
   "description": "Joomla-Template for Joomla DACH 2023",
   "main": "gulpfile.js",
   "dependencies": {
-    "@babel/core": "^7.17.7",
-    "@babel/preset-env": "^7.16.11",
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
     "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
@@ -13,10 +13,10 @@
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-strip-comments": "^2.5.2",
-    "jquery": "^3.4.0",
-    "lib-sass-data-uri": "0.0.4",
-    "node-sass": "^7.0.1",
-    "sass": "^1.49.9"
+    "jquery": "^3.6.4",
+    "lib-sass-data-uri": "0.0.5",
+    "node-sass": "^8.0.0",
+    "sass": "^1.62.0"
   },
   "devDependencies": {
     "gulp": "^4.0.2"
