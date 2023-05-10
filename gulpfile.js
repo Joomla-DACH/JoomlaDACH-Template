@@ -50,8 +50,4 @@ gulp.task('watch', function() {
     gulp.watch('src/templates/joomladach2023/assets/js/template.js', gulp.series('parse-script'));
 });
 
-gulp.task('default', function() {
-  gulp.series('parse-template-scss')
-  gulp.series('parse-critical-scss')
-  gulp.series('parse-script')
-});
+gulp.task('default', gulp.series('parse-template-scss', 'parse-critical-scss', 'parse-script'));
