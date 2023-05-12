@@ -1,0 +1,71 @@
+@include critical(true) {
+  %btn {
+    --bgcolor: var(--jdach-lightblue);
+    --bghovercolor: var(--jdach-darkblue);
+    --color: #fff;
+    --hovercolor: #fff;
+    --bordercolor: var(--jdach-darkblue);
+    --borderhovercolor: var(--jdach-lightblue);
+    padding: var(--space-small) var(--space-large);
+    font-size: var(--size-sm);
+    text-align: center;
+    display: inline-flex;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    background: var(--bgcolor);
+    border-width: 3px;
+    border-style: solid;
+    border-color: var(--bordercolor);
+    transition: .25s ease-in-out;
+    appearance: none;
+    border-radius: 100vh;
+    font-family: var(--jdach-basefont);
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-smaller);
+    img,
+    svg {
+      display: block;
+      height: 1em;
+      width: auto;
+    }
+    &:hover,
+    &:focus-visible {
+      color: var(--hovercolor);
+      background: var(--bghovercolor);
+      border-color: var(--borderhovercolor);
+    }
+  }
+  .btn {
+    @extend %btn;
+  }
+  .btn--lightblue,
+  .btn--primary,
+  .btn-primary {
+    --bgcolor: var(--jdach-lightblue);
+    --bghovercolor: var(--jdach-darkblue);
+    --color: #fff;
+    --hovercolor: #fff;
+    --bordercolor: var(--jdach-darkblue);
+    --borderhovercolor: var(--jdach-lightblue);
+  }
+  .btn--darkblue,
+  .btn--secondary,
+  .btn-secondary {
+    --bgcolor: var(--jdach-darkblue);
+    --bghovercolor: #fff;
+    --color: #fff;
+    --hovercolor: var(--jdach-darkblue);
+    --bordercolor: #fff;
+    --borderhovercolor: var(--jdach-darkblue);
+  }
+  .btn--transparent {
+    --bgcolor: transparent;
+    --bghovercolor: var(--jdach-darkblue);
+    --color: var(--jdach-darkblue);
+    --hovercolor: var(--jdach-lightblue);
+    --bordercolor: var(--jdach-darkblue);
+    --borderhovercolor: var(--jdach-darkblue);
+  }
+}
