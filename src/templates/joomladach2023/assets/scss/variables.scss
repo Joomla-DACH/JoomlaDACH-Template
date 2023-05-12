@@ -19,27 +19,29 @@ $screen-xxl-min: 1680px;
 // Color
 
 :root {
-  --wtt-orange: #FD9901;
-  --wtt-cyan: #009ED1;
-  --wtt-green: #B0D400;
-  --wtt-blue: #2F4D5D;
-  --wtt-text: #7F7F7F;
-  --wtt-textdark: #4E4E4D;
+  --jdach-darkblue: #25304F;
+  --jdach-lightblue: #5091CD;
+  --jdach-yellow: #FEC34D;
+  --jdach-green: #89C764;
+  --jdach-red: #F44321;
 }
 
 // Typo
 :root {
-  --wtt-basefont: 'DINPro', sans-serif;
-  --size-xxxl: 4.05rem;
-  --size-xxl: 3.45rem;
-  --size-xl: 1.7rem;
-  --size-lg: 1.6rem;
-  --size-md: 1rem;
+  --jdach-basefont: 'Source Sans Pro', sans-serif;
+  --size-xxl: 1.667rem;
+  --size-xl: 1.33rem;
+  --size-lg: 1.11rem;
+  --size-md: 1.11rem;
   --size-df: 1rem;
-  --size-xs: .8rem;
-  --size-xxs: .75rem;
+  --size-sm: .866rem;
   @include lg {
-    --size-md: 1.3rem;
+    --size-xxl: 4.16rem;
+    --size-xl: 1.78rem;
+    --size-lg: 1.42rem;
+    --size-md: 1.07em;
+    --size-df: 1rem;
+    --size-sm: .89rem;
   }
 }
 
@@ -53,14 +55,10 @@ $screen-xxl-min: 1680px;
   --space-base: calc(var(--spaceunit) * 2);
   --space-small: calc(var(--spaceunit) * 1.5);
   --space-smaller: calc(var(--spaceunit) * 1);
-  @include xxl {
-    --space-xxxlarge: calc(var(--spaceunit) * 12);
-  }
 }
 
 // Utilities
 
 :root {
-  --contentcontainerwidth: 1460px;
-  --headerbarheight: 70px;
+  --contentcontainerwidth: 1340px;
 }
