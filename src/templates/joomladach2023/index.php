@@ -48,23 +48,71 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
   </head>
   <body class="<?php echo $pageclass ? htmlspecialchars($pageclass) : 'default'; ?>">
     <header class="headerbar">
-      <div class="contentcontainer">
+      <div class="headerbar__content contentcontainer">
+        <div>
+          <div class="headerbar__content-logomark">
+            <img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/img/logomark.svg" alt="Zur Startseite" />
+          </div>
+          <button class="headerbar__content-navtoggler">
+            <span class="visuallyhidden">Menü anzeigen / ausblenden</span>
+            <span aria-hidden="true" class="headerbar__content-navtoggler-icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+          <?php if ($this->countModules('header_mainnav', true)) : ?>
+            <nav class="headerbar__content-mainnav">
+              <jdoc:include type="modules" name="header_mainnav" />
+            </nav>
+          <?php endif; ?>
+        </div>
+        <?php if ($this->countModules('header_secnav', true)) : ?>
+          <nav class="headerbar__content-secnav">
+            <jdoc:include type="modules" name="header_secnav" />
+          </nav>
+        <?php endif; ?>
+      </div>
     </header>
     <main>
       <div class="main__content">
-          <?php if ($this->countmodules('content_top', true)) :  ?>
-            <jdoc:include type="modules" name="content_top"/>
-          <?php endif; ?>
+        <div class="contentcontainer">
+            <?php if ($this->countmodules('content_top', true)) :  ?>
+              <jdoc:include type="modules" name="content_top"/>
+            <?php endif; ?>
           <jdoc:include type="message" />
-          <?php if( strpos( $pageclass, 'hidecomponent' ) === false) : ?>
-            <jdoc:include type="component" />
-          <?php endif; ?>
-          <?php if ($this->countmodules('content_bottom', true)) :  ?>
-            <jdoc:include type="modules" name="content_bottom" />
-          <?php endif; ?>
+            <?php if( strpos( $pageclass, 'hidecomponent' ) === false) : ?>
+              <jdoc:include type="component" />
+            <?php endif; ?>
+            <?php if ($this->countmodules('content_bottom', true)) :  ?>
+              <jdoc:include type="modules" name="content_bottom" />
+            <?php endif; ?>
+        </div>
       </div>
     </main>
     <footer class="footer">
+      <div class="footer__main">
+          <?php if ($this->countModules('footer_nav', true)) : ?>
+            <nav class="footer__main-nav">
+              <jdoc:include type="modules" name="footer_nav" />
+            </nav>
+          <?php endif; ?>
+          <?php if ($this->countModules('footer_content', true)) : ?>
+            <nav class="footer__main-content">
+              <jdoc:include type="modules" name="footer_content" />
+            </nav>
+          <?php endif; ?>
+      </div>
+      <div class="footer__bottom">
+        <span class="footer__bottom-copyrightnote">
+          © <?php echo date("Y"); ?> JandBeyond e.V. – die Joomla!-Vereine aus Deutschland, Österreich und der Schweiz
+        </span>
+        <?php if ($this->countModules('footer_bottomnav', true)) : ?>
+          <nav class="footer__bottom-nav">
+            <jdoc:include type="modules" name="footer_bottomnav" />
+          </nav>
+        <?php endif; ?>
+      </div>
     </footer>
     <jdoc:include type="modules" name="debug" />
     <jdoc:include type="styles" />

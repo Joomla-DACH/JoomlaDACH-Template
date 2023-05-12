@@ -23,8 +23,13 @@
 		<folder>language</folder>
 	</files>
 	<positions>
+		<position>header_mainnav</position>
+		<position>header_secnav</position>
 		<position>content_top</position>
 		<position>content_bottom</position>
+		<position>footer_nav</position>
+		<position>footer_content</position>
+		<position>footer_bottomnav</position>
 	</positions>
 	<languages folder="language">
 		<language tag="de-DE">de-DE/de-DE.tpl_joomladach2023.ini</language>
