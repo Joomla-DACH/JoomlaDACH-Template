@@ -51,7 +51,7 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
       <div class="headerbar__content contentcontainer">
         <div>
           <div class="headerbar__content-logomark">
-            <img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/img/logomark.svg" alt="Zur Startseite" />
+            <img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/assets/img/logomark.svg" width="47" height=47" alt="Zur Startseite" />
           </div>
           <button class="headerbar__content-navtoggler">
             <span class="visuallyhidden">Menü anzeigen / ausblenden</span>
