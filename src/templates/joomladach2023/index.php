@@ -92,26 +92,30 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
     </main>
     <footer class="footer">
       <div class="footer__main">
-          <?php if ($this->countModules('footer_nav', true)) : ?>
-            <nav class="footer__main-nav">
-              <jdoc:include type="modules" name="footer_nav" />
-            </nav>
-          <?php endif; ?>
-          <?php if ($this->countModules('footer_content', true)) : ?>
-            <nav class="footer__main-content">
-              <jdoc:include type="modules" name="footer_content" />
-            </nav>
-          <?php endif; ?>
+          <div class="contentcontainer">
+              <?php if ($this->countModules('footer_nav', true)) : ?>
+                <nav class="footer__main-nav">
+                  <jdoc:include type="modules" name="footer_nav" />
+                </nav>
+              <?php endif; ?>
+              <?php if ($this->countModules('footer_content', true)) : ?>
+                <nav class="footer__main-content">
+                  <jdoc:include type="modules" name="footer_content" />
+                </nav>
+              <?php endif; ?>
+          </div>
       </div>
       <div class="footer__bottom">
-        <span class="footer__bottom-copyrightnote">
+        <div class="contentcontainer">
+          <span class="footer__bottom-copyrightnote">
           © <?php echo date("Y"); ?> JandBeyond e.V. – die Joomla!-Vereine aus Deutschland, Österreich und der Schweiz
         </span>
-        <?php if ($this->countModules('footer_bottomnav', true)) : ?>
-          <nav class="footer__bottom-nav">
-            <jdoc:include type="modules" name="footer_bottomnav" />
-          </nav>
-        <?php endif; ?>
+            <?php if ($this->countModules('footer_bottomnav', true)) : ?>
+              <nav class="footer__bottom-nav">
+                <jdoc:include type="modules" name="footer_bottomnav" />
+              </nav>
+            <?php endif; ?>
+        </div>
       </div>
     </footer>
     <jdoc:include type="modules" name="debug" />

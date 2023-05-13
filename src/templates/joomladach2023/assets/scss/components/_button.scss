@@ -24,6 +24,8 @@
     align-items: center;
     justify-content: center;
     gap: var(--space-smaller);
+    text-decoration: none;
+    color: var(--color);
     img,
     svg {
       display: block;
@@ -67,5 +69,13 @@
     --hovercolor: var(--jdach-lightblue);
     --bordercolor: var(--jdach-darkblue);
     --borderhovercolor: var(--jdach-darkblue);
+    .bg-darkblue & {
+      --bgcolor: transparent;
+      --bghovercolor: #fff;
+      --color: #fff;
+      --hovercolor: var(--jdach-darkblue);
+      --bordercolor: #fff;
+      --borderhovercolor: #fff;
+    }
   }
 }

@@ -4,10 +4,16 @@
     overflow-x: hidden;
     scroll-behavior: smooth;
   }
+  .contentcontainer {
+    width: 100%;
+    max-width: var(--contentcontainerwidth);
+    margin: 0 auto;
+  }
   @supports (overflow-x: clip) {
     html,
     body {
       overflow-x: clip;
     }
   }
+
 }
