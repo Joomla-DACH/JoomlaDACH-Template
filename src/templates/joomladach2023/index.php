@@ -29,13 +29,9 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
   <head>
     <jdoc:include type="metas" />
     <jdoc:include type="scripts" />
-    <?php if(empty($_SERVER['HTTP_X_INLINE_STYLES']) || $_SERVER['HTTP_X_INLINE_STYLES'] !== 'false'): ?>
-      <style>
-        <?php echo file_get_contents(dirname(__FILE__) . "/assets/css/critical.css"); ?>
-      </style>
-    <?php else: ?>
-      <link href="<?php echo 'templates/' . $this->template . '/assets/css/critical.css?v=' . md5(file_get_contents(dirname(__FILE__) . "/assets/css/critical.css")); ?>" rel="stylesheet" type="text/css" />
-    <?php endif; ?>
+    <style>
+      <?php echo file_get_contents(dirname(__FILE__) . "/assets/css/critical.css"); ?>
+    </style>
     <link rel="apple-touch-icon" sizes="180x180"
           href="<?php echo $templatePath . '/favicon_package'; ?>/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32"
