@@ -69,7 +69,8 @@
     --hovercolor: var(--jdach-lightblue);
     --bordercolor: var(--jdach-darkblue);
     --borderhovercolor: var(--jdach-darkblue);
-    .bg-darkblue & {
+    .bg-darkblue &,
+    .bg-midblue & {
       --bgcolor: transparent;
       --bghovercolor: #fff;
       --color: #fff;
@@ -77,5 +78,12 @@
       --bordercolor: #fff;
       --borderhovercolor: #fff;
     }
+  }
+  // Button-Group
+  .btngrp {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--space-small);
   }
 }

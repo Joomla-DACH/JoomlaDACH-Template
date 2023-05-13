@@ -91,7 +91,7 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
       </div>
     </main>
     <footer class="footer">
-      <div class="footer__main">
+      <div class="footer__main bg-midblue">
           <div class="contentcontainer">
               <?php if ($this->countModules('footer_nav', true)) : ?>
                 <nav class="footer__main-nav">
@@ -105,7 +105,7 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
               <?php endif; ?>
           </div>
       </div>
-      <div class="footer__bottom">
+      <div class="footer__bottom bg-darkblue">
         <div class="contentcontainer">
           <span class="footer__bottom-copyrightnote">
           © <?php echo date("Y"); ?> JandBeyond e.V. – die Joomla!-Vereine aus Deutschland, Österreich und der Schweiz

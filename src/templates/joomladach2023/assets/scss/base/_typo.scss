@@ -4,6 +4,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: var(--jdach-darkblue);
+    font-family: var(--jdach-basefont);
   }
 
   // Headings
@@ -40,7 +41,7 @@
 
   // Utilities
 
-  $colors: ('lightblue': #5091CD, 'darkblue': #25304F, 'yellow': #FEC34D, 'green': #89C764, 'red': #F44321, 'white': #fff);
+  $colors: ('lightblue': #5091CD, 'darkblue': #25304F, 'yellow': #FEC34D, 'green': #89C764, 'red': #F44321, 'white': #fff, 'midblue': #2D395A);
   $fws: 100, 200, 300, 400, 500, 600, 700, 800, 900;
   $fs: sm, df, md, lg, xl, xxl;
 

@@ -1,0 +1,38 @@
+@include critical(false) {
+  .footer {
+    color: #fff;
+    a {
+      color: #fff;
+    }
+    &__main,
+    &__bottom {
+      padding: var(--space-xlarge) 0;
+    }
+    &__main {
+      font-size: var(--size-sm);
+      @include md {
+        padding: var(--space-xxlarge) 0;
+      }
+      @include lg {
+        padding: 140px 0;
+        font-size: var(--size-md);
+      }
+      > .contentcontainer {
+        display: grid;
+        grid-gap: var(--space-large);
+        @include md {
+          grid-template-columns: 2fr 1fr;
+        }
+      }
+    }
+    &__bottom {
+      > .contentcontainer {
+        @include md {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+}
