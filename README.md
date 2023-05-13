@@ -10,7 +10,17 @@ Template Ordner zippen und installieren, oder Ordner hochladen und "Discover"-Fu
 * BE
 * CONTINUED
 
-## Ordner-Struktur und Aufbau
+## Ordner- und Datei-Struktur
+* src/templates/joomladach2023 - Basis-Ordner des Templates
+* src/templates/joomladach2023/language - Sprachdatein
+* src/templates/joomladach2023/favicon_package - Packages
+* src/templates/joomladach2023/assets/css - Generierte CSS-Dateien, als Compile-Result aus den SCSS Dateien entstanden, daher aus Git ausgeschlossen
+* src/templates/joomladach2023/assets/font - Sprachdateien
+* src/templates/joomladach2023/assets/img - Bilddatein
+* src/templates/joomladach2023/assets/js - JavaScript-Logik
+* src/templates/joomladach2023/assets/scss
+
+# SCSS Struktur
 
 
 ## Entwicklungs-Setup
