@@ -30,10 +30,11 @@
         color: #fff;
       }
       &::after {
-        content: url('../img/icon/arrow_lightblue-right.svg');
-        transform: rotate(90deg);
-        width: 1em;
-        height: 1em;
+        content: '';
+        background: url('../img/icon/arrow_down_blue.svg') no-repeat;
+        width: 0.75em;
+        height: 1.1em;
+        background-size: 10px auto;
         text-align: center;
         transition: all .35s;
       }
@@ -50,7 +51,7 @@
   .modul__akkordion-faq_radio:checked {
     + .modul__akkordion-faq_tab-label {
       &::after {
-        transform: rotate(-90deg);
+        transform: rotate(180deg);
       }
     }
     ~ .modul__akkordion-faq_tab-content {
