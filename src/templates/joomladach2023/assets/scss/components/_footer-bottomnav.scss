@@ -1,0 +1,13 @@
+@include critical(false) {
+  .footer__bottom-nav {
+    ul {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-base);
+      justify-content: flex-end;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
