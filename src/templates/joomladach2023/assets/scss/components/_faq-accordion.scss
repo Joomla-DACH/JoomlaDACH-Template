@@ -1,62 +1,43 @@
 @include critical(false) {
-  .modul__akkordion-faq{
-    list-style-type: none;
+
+  .modul__accordion-faq{
+    margin: 0;
+    padding: 0;
     a{
       text-decoration: none;
     }
   }
 
-  .modul__akkordion-faq_radio{
-    position: absolute;
-    opacity: 0;
-    z-index: -1;
-  }
-  .modul__akkordion-faq_tab{
+  .modul__accordion-faq_trigger{
+    padding: var(--spaceunit);
+    border:0;
+    background: none;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--jdach-darkblue);
+    border-bottom: 2px solid var(--jdach-darkblue);
     width: 100%;
-    overflow: hidden;
-    &-label {
-      padding: var(--spaceunit);
-      font-weight: bold;
-      cursor: pointer;
-      color: var(--jdach-darkblue);
-      border-bottom: 2px solid var(--jdach-darkblue);
-      width: 100%;
-      display: inline-block;
-      display: flex;
-      justify-content: space-between;
-      /* Icon */
-      &:hover {
-        background: var(--jdach-darkblue);
-        color: #fff;
-      }
-      &::after {
-        content: '';
-        background: url('../img/icon/arrow_down_blue.svg') no-repeat;
-        width: 0.75em;
-        height: 1.1em;
-        background-size: 10px auto;
-        text-align: center;
-        transition: all .35s;
-      }
-    }
-    &-content {
-      max-height: 0;
-      padding: 0 1em;
-      color:  var(--jdach-darkblue);
-      transition: all .35s;
-      overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    /* Icon */
+    &:hover {
+      background: var(--jdach-darkblue);
+      color: #fff;
     }
   }
 
-  .modul__akkordion-faq_radio:checked {
-    + .modul__akkordion-faq_tab-label {
-      &::after {
-        transform: rotate(180deg);
-      }
-    }
-    ~ .modul__akkordion-faq_tab-content {
-      max-height: 100vh;
-      padding: 1em;
-    }
+  .modul__accordion-faq_icon{
+    width: 0.75em;
+    height: 1.1em;
+
   }
+
+  .modul__accordion-faq_trigger[aria-expanded="true"] .modul__accordion-faq_icon {
+    transform: rotate(-180deg);
+  }
+
+  .modul__accordion-faq_panel[hidden] {
+    display: none;
+  }
+
 }
