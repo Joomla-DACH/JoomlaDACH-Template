@@ -8,6 +8,8 @@
     width: 100%;
     max-width: var(--contentcontainerwidth);
     margin: 0 auto;
+    padding-left: var(--space-large);
+    padding-right: var(--space-large);
   }
   @supports (overflow-x: clip) {
     html,
