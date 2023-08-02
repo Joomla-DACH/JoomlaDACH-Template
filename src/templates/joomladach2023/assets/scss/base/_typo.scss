@@ -46,6 +46,20 @@
   $fs: sm, df, md, lg, xl, xxl;
 
 
+  // Input
+  input[type="text"],
+  input[type="search"],
+  input[type="date"],
+  input[type="number"],
+  input[type="email"],
+  input[type="tel"] {
+    padding: var(--space-base);
+    font-family: var(--jdach-basefont);
+    background: #fff;
+    border: 1px solid var(--jdach-darkblue);
+    border-radius: 13px;
+  }
+
   // Font-Size
   @each $size in $fs {
     .txt-#{$size} {

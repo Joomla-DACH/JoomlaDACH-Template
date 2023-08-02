@@ -6,9 +6,7 @@
       list-style: none;
       display: grid;
       gap: var(--space-base);
-      @include md {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      grid-template-columns: repeat(2, 1fr);
       @include lg {
         grid-gap: var(--space-large);
         grid-column-gap: var(--space-xxlarge);

@@ -62,4 +62,8 @@ $screen-xxl-min: 1680px;
 
 :root {
   --contentcontainerwidth: 1340px;
+  --headerbarheight: 65px;
+  @include lg {
+    --headerbarheight: 140px;
+  }
 }

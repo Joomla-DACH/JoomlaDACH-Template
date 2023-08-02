@@ -45,9 +45,11 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
   <body class="<?php echo $pageclass ? htmlspecialchars($pageclass) : 'default'; ?>">
     <header class="headerbar">
       <div class="headerbar__content contentcontainer">
-        <div>
+        <div class="headerbar__content-mainbar">
           <div class="headerbar__content-logomark">
-            <img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/assets/img/logomark.svg" width="47" height=47" alt="Zur Startseite" />
+            <a href="<?php echo $this->baseurl ?>">
+              <img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/assets/img/logomark.svg" width="47" height=47" alt="Zur Startseite" />
+            </a>
           </div>
           <button class="headerbar__content-navtoggler">
             <span class="visuallyhidden">Menü anzeigen / ausblenden</span>
@@ -60,11 +62,16 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
           <?php if ($this->countModules('header_mainnav', true)) : ?>
             <nav class="headerbar__content-mainnav">
               <jdoc:include type="modules" name="header_mainnav" />
+                <?php if ($this->countModules('header_secnav', true)) : ?>
+                  <div class="headerbar__content-mainnav-secnav secnav">
+                    <jdoc:include type="modules" name="header_secnav" />
+                  </div>
+                <?php endif; ?>
             </nav>
           <?php endif; ?>
         </div>
         <?php if ($this->countModules('header_secnav', true)) : ?>
-          <nav class="headerbar__content-secnav">
+          <nav class="headerbar__content-secnav secnav">
             <jdoc:include type="modules" name="header_secnav" />
           </nav>
         <?php endif; ?>
