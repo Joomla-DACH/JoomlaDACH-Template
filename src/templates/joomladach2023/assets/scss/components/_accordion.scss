@@ -20,14 +20,16 @@
           border-bottom: 2px solid var(--jdach-yellow);
           color: var(--jdach-midblue);
         }
+        &[aria-expanded="true"] & {
+          .accordion__item-trigger-icon {
+            transform: rotate(-180deg);
+          }
+        }
         /* Icon */
         &-icon {
           width: 0.75em;
           height: 1.1em;
           transition: .25s ease-in-out;
-          [aria-expanded="true"] & {
-            transform: rotate(-180deg);
-          }
         }
       }
       &-panel {
