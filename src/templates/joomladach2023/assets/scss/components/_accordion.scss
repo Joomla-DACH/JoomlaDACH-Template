@@ -1,0 +1,48 @@
+@include critical(false) {
+  .accordion {
+    margin: 0;
+    padding: 0;
+    &__item {
+      &-trigger {
+        padding: var(--spaceunit);
+        border:0;
+        background: none;
+        font-weight: bold;
+        cursor: pointer;
+        color: var(--jdach-darkblue);
+        border-bottom: 2px solid var(--jdach-darkblue);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        /* Icon */
+        &:hover {
+          background: var(--jdach-darkblue);
+          color: #fff;
+        }
+        &-icon {
+          width: 0.75em;
+          height: 1.1em;
+          transition: .25s ease-in-out;
+        }
+        &[aria-expanded="true"] .accordion__trigger-icon {
+          transform: rotate(-180deg);
+        }
+      }
+      &-panel {
+        overflow: hidden;
+        max-height: 0;
+        transition: .3s ease-in-out;
+        > * {
+          opacity: 0;
+          transition: .3s ease-in-out;
+        }
+        &.open {
+          max-height: 800px;
+          > * {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
