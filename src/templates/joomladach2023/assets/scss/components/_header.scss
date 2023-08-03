@@ -1,0 +1,52 @@
+@include critical(true) {
+  .headerbar {
+    background: var(--jdach-midblue);
+    position: fixed;
+    z-index: 5000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    &__content {
+      height: var(--headerbarheight);
+      padding-top: var(--space-small);
+      padding-bottom: var(--space-small);
+      @include lg {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      &-mainbar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        @include lg {
+          order: 2;
+          justify-content: start;
+          height: auto;
+        }
+      }
+      &-secnav {
+        display: none;
+        @include lg {
+          display: flex;
+          order: 1;
+          align-items: center;
+          justify-content: end;
+          gap: var(--space-large);
+        }
+      }
+      &-logomark {
+        height: 100%;
+        @include lg {
+          height: 46px;
+        }
+        img {
+          height: 100%;
+          width: auto;
+          display: block;
+        }
+      }
+    }
+  }
+}

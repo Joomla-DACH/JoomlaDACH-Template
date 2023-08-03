@@ -1,0 +1,70 @@
+@include critical(true) {
+  .modfinderheaderbar {
+    display: flex;
+    gap: var(--space-small);
+    align-items: start;
+    @include lg {
+      align-items: center;
+      gap: var(--space-base);
+    }
+    &__toggle {
+      appearance: none;
+      background: transparent;
+      border: 0px;
+      @include max-lg {
+        padding-left: 0;
+      }
+      @include lg {
+        &:hover,
+        &:focus-visible {
+          background: rgba(255,255,255,.08);
+        }
+      }
+      svg {
+        height: 1rem;
+        width: auto;
+      }
+    }
+    &__form {
+      transition: .3s ease-in-out;
+      opacity: 0;
+      overflow: hidden;
+      width: 100%;
+      max-height: 0px;
+      @include lg {
+        max-width: 0px;
+        max-height: none;
+      }
+      input[type="text"] {
+        padding: var(--space-small);
+        width: 100%;
+      }
+      .mod-finder__search {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-small);
+        > * {
+          width: 100%;
+        }
+        @include lg {
+          flex-direction: row;
+          align-items: center;
+          > * {
+            width: auto;
+          }
+        }
+        button span {
+          display: none;
+        }
+      }
+    }
+  }
+  .activesearch .modfinderheaderbar__form {
+    opacity: 1;
+    max-height: 300px;
+    @include lg {
+      max-width: 600px ;
+      max-height: none;
+    }
+  }
+}
