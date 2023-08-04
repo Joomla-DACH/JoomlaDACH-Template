@@ -25,8 +25,10 @@
 	<positions>
 		<position>header_mainnav</position>
 		<position>header_secnav</position>
+		<position>content_top_fullwidth</position>
 		<position>content_top</position>
 		<position>content_bottom</position>
+		<position>content_bottom_fullwidth</position>
 		<position>footer_nav</position>
 		<position>footer_content</position>
 		<position>footer_bottomnav</position>
