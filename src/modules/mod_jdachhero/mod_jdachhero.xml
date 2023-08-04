@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+    <name>Joomla DACH - JDACH Hero</name>
+    <author>djumla GmbH</author>
+    <version>1.0.0</version>
+    <description>Modul zur Darstellung des Headerbereichs</description>
+    <files>
+        <filename>mod_jdachhero.xml</filename>
+        <filename module="mod_jdachhero.php">mod_jdachhero.php</filename>
+        <filename>index.html</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>>
+    </files>
+    <config>
+        $colors: ('lightblue': #5091CD, 'darkblue': #25304F, 'yellow': #FEC34D, 'green': #89C764, 'red': #F44321, 'white': #fff, 'midblue': #2D395A, 'lightgrey': #8790AC);
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                    name="background"
+                    type="list"
+                    label="Hintergrundfarbe"
+                    default="darkblue"
+                >
+                    <option value="darkblue">Darkblue</option>
+                    <option value="midblue">Midblue</option>
+                    <option value="lightblue">Lightblue</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="green">Green</option>
+                    <option value="red">Red</option>
+                </field>
+                <field
+                    name="title"
+                    type="text"
+                    label="Titel"
+                    filter="safehtml" />
+                <field
+                    name="image"
+                    type="media"
+                    label="Bild"
+                    required="true"/>
+                <field
+                    name="ctas"
+                    type="subform"
+                    label="Call-To-Action Elemente"
+                    multiple="true"
+                    min="1"
+                >
+                    <form>
+                        <field
+                            name="item_label"
+                            type="text"
+                            label="Label"
+                            filter="safehtml" />
+                        <field
+                            name="item_link"
+                            type="text"
+                            label="Link"
+                            filter="safehtml" />
+                        <field
+                            name="item_variant"
+                            type="list"
+                            label="Buttonvariante"
+                            default="primary"
+                        >
+                            <option value="primary">Primary</option>
+                            <option value="secondary">Secondary</option>
+                            <option value="transparent">Transparent</option>
+                        </field>
+                    </form>
+                </field>
+            </fieldset>
+            <fieldset
+                    name="advanced">
+                <field
+                        name="moduleclass_sfx"
+                        type="textarea" rows="3"
+                        label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                        description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+                <field
+                        name="cache"
+                        type="list"
+                        default="1"
+                        label="COM_MODULES_FIELD_CACHING_LABEL"
+                        description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option
+                            value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option
+                            value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+                <field
+                        name="cache_time"
+                        type="text"
+                        default="900"
+                        label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+                        description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>
