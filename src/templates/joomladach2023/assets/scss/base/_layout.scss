@@ -4,6 +4,13 @@
     overflow-x: hidden;
     scroll-behavior: smooth;
   }
+  main {
+    margin-top: var(--headerbarheight);
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
   .contentcontainer {
     width: 100%;
     max-width: var(--contentcontainerwidth);
