@@ -4,11 +4,11 @@ window.addEventListener('DOMContentLoaded', () => {
     accordionItem.querySelector('.accordion__item-trigger').addEventListener('click', (e) => {
       accordionItem.querySelector('.accordion__item-panel').classList.toggle('open');
 
-      if (e.target.getAttribute('aria-expanded') === 'true') {
-        e.target.setAttribute('aria-expanded' , 'false')
+      if (accordionItem.querySelector('.accordion__item-trigger').getAttribute('aria-expanded') === 'true') {
+        accordionItem.querySelector('.accordion__item-trigger').setAttribute('aria-expanded' , 'false')
         return;
       }
-      e.target.setAttribute('aria-expanded' , 'true')
+      accordionItem.querySelector('.accordion__item-trigger').setAttribute('aria-expanded' , 'true')
     })
   }
 })
