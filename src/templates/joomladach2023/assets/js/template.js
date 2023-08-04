@@ -9,6 +9,9 @@ window.addEventListener('DOMContentLoaded', () => {
         return;
       }
       e.target.setAttribute('aria-expanded' , 'true')
+    })
+  }
+})
 
 // Offcanvas
 document.addEventListener('DOMContentLoaded', () => {
