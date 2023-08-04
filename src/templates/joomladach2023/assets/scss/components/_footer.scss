@@ -1,6 +1,10 @@
 @include critical(false) {
   .footer {
     color: #fff;
+    margin-top: var(--space-xlarge);
+    @include md {
+      margin-top: var(--space-xxlarge);
+    }
     a {
       color: #fff;
     }

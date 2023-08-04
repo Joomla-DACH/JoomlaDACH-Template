@@ -49,8 +49,8 @@
     --bghovercolor: var(--jdach-darkblue);
     --color: #fff;
     --hovercolor: #fff;
-    --bordercolor: var(--jdach-darkblue);
-    --borderhovercolor: var(--jdach-lightblue);
+    --bordercolor: var(--jdach-lightblue);
+    --borderhovercolor: var(--jdach-darkblue);
   }
   .btn--darkblue,
   .btn--secondary,
@@ -59,7 +59,7 @@
     --bghovercolor: #fff;
     --color: #fff;
     --hovercolor: var(--jdach-darkblue);
-    --bordercolor: #fff;
+    --bordercolor: var(--jdach-darkblue);
     --borderhovercolor: var(--jdach-darkblue);
   }
   .btn--transparent {

@@ -2,6 +2,7 @@
   @include lg {
     .headerbar__content-mainnav {
       margin-left: var(--space-large);
+      font-size: var(--size-sm);
       @include xl {
         margin-left: var(--space-xlarge);
       }

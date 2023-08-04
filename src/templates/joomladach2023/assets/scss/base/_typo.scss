@@ -6,6 +6,12 @@
     color: var(--jdach-darkblue);
     font-family: var(--jdach-basefont);
     font-size: 21px;
+    line-height: 1.55;
+  }
+  // General
+
+  a {
+    color: var(--jdach-lightblue);
   }
 
   // Headings
@@ -42,7 +48,7 @@
 
   // Utilities
 
-  $colors: ('lightblue': #5091CD, 'darkblue': #25304F, 'yellow': #FEC34D, 'green': #89C764, 'red': #F44321, 'white': #fff, 'midblue': #2D395A);
+  $colors: ('lightblue': #5091CD, 'darkblue': #25304F, 'yellow': #FEC34D, 'green': #89C764, 'red': #F44321, 'white': #fff, 'midblue': #2D395A, 'lightgrey': #8790AC);
   $fws: 100, 200, 300, 400, 500, 600, 700, 800, 900;
   $fs: sm, df, md, lg, xl, xxl;
 
