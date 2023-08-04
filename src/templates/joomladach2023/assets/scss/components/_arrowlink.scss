@@ -1,0 +1,28 @@
+@include critical(true) {
+  .arrowlink {
+    display: flex;
+    gap: var(--space-base);
+    align-items: center;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .25s ease-in-out;
+    &:hover,
+    &:focus {
+      &:before {
+        transform: translateX(25%);
+      }
+    }
+    &:before {
+      height: 14px;
+      width: 29px;
+      display: block;
+      content: " ";
+      transition: .25s ease-in-out;
+    }
+  }
+}
+@include critical(false) {
+  .arrowlink:before {
+    background: url('../img/icon/arrow_lightblue-right.svg') center no-repeat;
+  }
+}
