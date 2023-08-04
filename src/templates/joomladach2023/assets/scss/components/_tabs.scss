@@ -1,0 +1,56 @@
+@include critical(true) {
+  .tabs {
+    &__tablist {
+      width: auto;
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: var(--space-small);
+      @include md {
+        border-radius: 100vh;
+        background: var(--jdach-lightblue);
+        padding: 4px;
+      }
+      [role="tab"] {
+        padding: var(--space-small) var(--space-large);
+        font-size: var(--size-sm);
+        text-align: center;
+        display: inline-flex;
+        font-weight: 900;
+        border-radius: 100vh;
+        background: var(--jdach-lightblue);
+        border: 0px;
+        appearance: none;
+        transition: .25s ease-in-out;
+        font-family: var(--jdach-basefont);
+        color: #fff;
+        white-space: nowrap;
+        &:hover,
+        &:focus {
+          background: var(--jdach-midblue);
+        }
+        @include md {
+          background: transparent;
+          &:hover,
+          &:focus {
+            background: rgba(255,255,255,.05);
+          }
+        }
+        &[aria-selected="true"] {
+          background: var(--jdach-darkblue);
+          @include md {
+            background: #fff;
+            color: var(--jdach-lightblue);
+          }
+        }
+      }
+    }
+    &__panels {
+      [role="tabpanel"] {
+        overflow: auto;
+        &.is-hidden {
+          display: none;
+        }
+      }
+    }
+  }
+}
