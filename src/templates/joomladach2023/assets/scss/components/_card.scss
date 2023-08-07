@@ -1,0 +1,39 @@
+@include critical(true) {
+  $bordercolors:
+    'lightblue' '#25304F',
+    'darkblue' '#192136',
+    'yellow' '#E6B045',
+    'green' '#76AD57',
+    'red' '#DB3E1F',
+    'white' '#25304F',
+    'midblue' '#25304F',
+    'lightgrey' '#25304F';
+  .card {
+    padding: var(--space-large);
+    border-radius: 16px;
+    border: 1px solid var(--bordercolor);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @each $name, $bordercolor in $bordercolors {
+      &.bg-#{$name} {
+        --bordercolor: #{$bordercolor};
+      }
+    }
+    &__title {
+      font-weight: 900;
+      display: block;
+      line-height: 1.2;
+    }
+    &__contentcontainer {
+      flex-grow: 1;
+    }
+    &__link {
+      margin-top: var(--space-xxlarge);
+      display: flex;
+      width: auto;
+      margin-left: auto;
+      justify-content: flex-end;
+    }
+  }
+}

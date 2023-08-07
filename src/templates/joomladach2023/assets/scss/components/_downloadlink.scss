@@ -1,0 +1,29 @@
+@include critical(true) {
+  .downloadlink {
+    display: flex;
+    gap: var(--space-base);
+    align-items: center;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .25s ease-in-out;
+    &:hover,
+    &:focus {
+      &:before {
+        transform: translateY(25%);
+      }
+    }
+    &:before {
+      height: 27px;
+      width: 18px;
+      display: block;
+      content: " ";
+      transition: .25s ease-in-out;
+    }
+  }
+}
+@include critical(false) {
+  .downloadlink:before {
+    background: url('../img/icon/icon_download_blue.svg') center no-repeat;
+    background-size: contain;
+  }
+}
