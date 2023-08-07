@@ -79,11 +79,14 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
     </header>
     <main>
       <div class="main__content">
+        <?php if ($this->countmodules('content_top_fullwidth', true)) :  ?>
+          <jdoc:include type="modules" name="content_top_fullwidth"/>
+        <?php endif; ?>
         <div class="contentcontainer">
             <?php if ($this->countmodules('content_top', true)) :  ?>
               <jdoc:include type="modules" name="content_top"/>
             <?php endif; ?>
-          <jdoc:include type="message" />
+            <jdoc:include type="message" />
             <?php if( strpos( $pageclass, 'hidecomponent' ) === false) : ?>
               <jdoc:include type="component" />
             <?php endif; ?>
@@ -91,6 +94,9 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
               <jdoc:include type="modules" name="content_bottom" />
             <?php endif; ?>
         </div>
+        <?php if ($this->countmodules('content_bottom_fullwidth', true)) :  ?>
+          <jdoc:include type="modules" name="content_bottom_fullwidth"/>
+        <?php endif; ?>
       </div>
     </main>
     <footer class="footer">
