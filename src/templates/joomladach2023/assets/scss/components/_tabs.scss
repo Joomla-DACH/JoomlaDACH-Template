@@ -46,7 +46,6 @@
     }
     &__panels {
       [role="tabpanel"] {
-        overflow: auto;
         &.is-hidden {
           display: none;
         }

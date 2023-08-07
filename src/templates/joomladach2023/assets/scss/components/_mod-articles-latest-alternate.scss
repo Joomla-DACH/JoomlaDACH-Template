@@ -1,0 +1,100 @@
+@include critical(true) {
+  .mod-articles-latest-alternate {
+    display: grid;
+    gap: var(--space-xxlarge);
+    counter-reset: section;
+    @include md {
+      &:not(.mod-articles-latest-alternate--news) {
+        gap: var(--space-xxxlarge);
+      }
+    }
+    &__item {
+      @include md {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: var(--space-xxxlarge);
+        align-items: center;
+        &:nth-child(odd) {
+          grid-template-columns: 2fr 1fr;
+          .mod-articles-latest-alternate__item-image {
+            order: 2;
+          }
+          .mod-articles-latest-alternate__item-content {
+            order: 1;
+          }
+        }
+      }
+      @include xl {
+        gap: calc(var(--space-xxxlarge) * 1.5);
+      }
+      &-image {
+        order: 1;
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      &-content {
+        padding: var(--space-large);
+        background: #fff;
+        border: 1px solid var(--jdach-darkblue);
+        order: 2;
+        color: var(--jdach-darkblue);
+        border-radius: 16px;
+        @include md {
+          padding: var(--space-xxlarge);
+        }
+        @include lg {
+          border-radius: 32px;
+        }
+        > *:first-child {
+          margin-top: 0;
+        }
+        > *:last-child {
+          margin-bottom: 0;
+        }
+        &-title {
+          margin: 0 0 1.5rem 0;
+        }
+      }
+    }
+    &--counter {
+      .mod-articles-latest-alternate__item-content {
+        position: relative;
+        border-radius: 0 16px 16px 16px;
+        @include lg {
+          border-radius: 0 32px 32px 32px;
+        }
+        &:before {
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          line-height: 1;
+          background: var(--jdach-lightblue);
+          color: #fff;
+          font-weight: 700;
+          content: counter(section);
+          position: absolute;
+          left: 0;
+          top: 0;
+          transform: translate(-50%, - 50%);
+          z-index: 2;
+          border-radius: 50%;
+          counter-increment: section;
+          @include lg {
+            width: 50px;
+            height: 50px;
+          }
+        }
+      }
+    }
+    &--news {
+      .mod-articles-latest-alternate__item:nth-child(even) {
+        .mod-articles-latest-alternate__item-content {
+          grid-column: 2 / span 1;
+        }
+      }
+    }
+  }
+}

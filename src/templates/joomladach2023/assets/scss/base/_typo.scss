@@ -48,7 +48,15 @@
 
   // Utilities
 
-  $colors: ('lightblue': #5091CD, 'darkblue': #25304F, 'yellow': #FEC34D, 'green': #89C764, 'red': #F44321, 'white': #fff, 'midblue': #2D395A, 'lightgrey': #8790AC);
+  $colors:
+        'lightblue' '#5091CD' '#25304F',
+        'darkblue' '#25304F' '#fff',
+        'yellow' '#FEC34D' '#25304F',
+        'green' '#89C764' '#25304F',
+        'red' '#F44321' '#fff',
+        'white' '#fff' '#25304F',
+        'midblue' '#2D395A' '#fff',
+        'lightgrey' '#8790AC' '#25304F';
   $fws: 100, 200, 300, 400, 500, 600, 700, 800, 900;
   $fs: sm, df, md, lg, xl, xxl;
 
@@ -80,15 +88,14 @@
     }
   }
   // Text-Color
-  @each $color, $value in $colors {
-    .txt-#{$color} {
-      color: $value;
+  @each $name, $value, $invertedvalue in $colors {
+    .txt-#{$name} {
+      color: #{$value};
     }
-  }
-  // Background-Color
-  @each $color, $value in $colors {
-    .bg-#{$color} {
-      background-color: $value;
+    // Background-Color
+    .bg-#{$name} {
+      background-color: #{$value};
+      color: #{$invertedvalue};
     }
   }
 }
