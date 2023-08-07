@@ -96,6 +96,9 @@
     .bg-#{$name} {
       background-color: #{$value};
       color: #{$invertedvalue};
+      .card__link {
+        color: #{$invertedvalue};
+      }
     }
   }
 }

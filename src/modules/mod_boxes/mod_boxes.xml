@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+    <name>Joomla DACH - Boxes</name>
+    <author>djumla GmbH</author>
+    <version>1.0.0</version>
+    <description>Modul zur Darstellung von Boxen in einem n-spaltigen Grid</description>
+    <files>
+        <filename>mod_boxes.xml</filename>
+        <filename module="mod_boxes.php">mod_boxes.php</filename>
+        <filename>index.html</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                    name="columns"
+                    type="number"
+                    label="Spalten"
+                    filter="safehtml"
+                    default="3" />
+                <field
+                    name="items"
+                    type="subform"
+                    label="Boxen"
+                    multiple="true"
+                    min="1"
+                >
+                    <form>
+                        <field
+                            name="item_title"
+                            type="text"
+                            label="Überschrift"
+                            filter="safehtml" />
+                        <field
+                            name="item_content"
+                            type="editor"
+                            label="Inhalt"
+                            filter="safehtml" />
+                        <field
+                            name="item_link"
+                            type="text"
+                            label="Link"
+                            filter="safehtml" />
+                        <field
+                            name="item_linklabel"
+                            type="text"
+                            label="Linklabel"
+                            filter="safehtml" />
+                        <field
+                            name="item_linktype"
+                            type="list"
+                            label="Linktyp"
+                            default="link"
+                        >
+                            <option value="above">Link</option>
+                            <option value="download">Download</option>
+                        </field>
+                        <field
+                            name="item_background"
+                            type="list"
+                            label="Hintergrundfarbe"
+                            default="white"
+                        >
+                            <option value="white">White</option>
+                            <option value="darkblue">Darkblue</option>
+                            <option value="midblue">Midblue</option>
+                            <option value="lightblue">Lightblue</option>
+                            <option value="yellow">Yellow</option>
+                            <option value="green">Green</option>
+                            <option value="red">Red</option>
+                        </field>
+                    </form>
+                </field>
+            </fieldset>
+            <fieldset
+                    name="advanced">
+                <field
+                        name="moduleclass_sfx"
+                        type="textarea" rows="3"
+                        label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                        description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+                <field
+                        name="cache"
+                        type="list"
+                        default="1"
+                        label="COM_MODULES_FIELD_CACHING_LABEL"
+                        description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option
+                            value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option
+                            value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+                <field
+                        name="cache_time"
+                        type="text"
+                        default="900"
+                        label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+                        description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>
