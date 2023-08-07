@@ -46,20 +46,6 @@
     line-height: 1.25;
   }
 
-  // Utilities
-
-  $colors:
-        'lightblue' '#5091CD' '#25304F',
-        'darkblue' '#25304F' '#fff',
-        'yellow' '#FEC34D' '#25304F',
-        'green' '#89C764' '#25304F',
-        'red' '#F44321' '#fff',
-        'white' '#fff' '#25304F',
-        'midblue' '#2D395A' '#fff',
-        'lightgrey' '#8790AC' '#25304F';
-  $fws: 100, 200, 300, 400, 500, 600, 700, 800, 900;
-  $fs: sm, df, md, lg, xl, xxl;
-
 
   // Input
   input[type="text"],

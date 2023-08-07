@@ -7,6 +7,11 @@
       justify-content: flex-end;
       a {
         text-decoration: none;
+        opacity: .8;
+        transition: .25s ease-in-out;
+        &:hover {
+          opacity: 1;
+        }
       }
     }
   }
