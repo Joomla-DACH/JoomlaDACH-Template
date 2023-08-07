@@ -9,6 +9,7 @@
  */
 
 defined('_JEXEC') or die;
+use Joomla\CMS\HTML\HTMLHelper;
 
 if (!$list) {
     return;
@@ -27,16 +28,15 @@ if (!$list) {
         </div>
           <?php if(!empty(json_decode($item->images)->image_intro)): ?>
               <?php
-              $sizes = getimagesize(explode('#',json_decode($item->images)->image_intro)[0]);
+              $img = HTMLHelper::_('cleanImageURL', json_decode($item->images)->image_intro);
               ?>
             <img
-              src="<?php echo explode('#',json_decode($item->images)->image_intro)[0];?>"
+              src="<?php echo $img->url ;?>"
               loading="lazy"
               alt="<?php echo $item->title; ?>"
               class="mod-articles-latest-alternate__item-image"
-                <?php if ($sizes): ?>
-                  width="<?php echo $sizes[0]; ?>" height="<?php echo $sizes[1]; ?>"
-                <?php endif; ?>
+              width="<?php echo $img->attributes['width']; ?>"
+              height="<?php echo $img->attributes['height']; ?>"
             />
           <?php endif; ?>
       </div>
