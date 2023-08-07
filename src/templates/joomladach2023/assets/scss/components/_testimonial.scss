@@ -1,0 +1,23 @@
+@include critical(false) {
+  .testimonial {
+    grid-gap: var(--space-xxlarge);
+    @include md {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      align-items: center;
+    }
+    &__content {
+      &-quote {
+        margin: 0;
+      }
+    }
+    &__image {
+      margin: 0 auto;
+      display: block;
+      width: 40%;
+      @include md {
+        width: 100%;
+      }
+    }
+  }
+}
