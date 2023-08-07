@@ -86,6 +86,10 @@
       }
       @include lg {
         padding: var(--space-xxxlarge) var(--space-xxlarge);
+        min-height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
       @include max-md {
         order: var(--mobileordercontent);
