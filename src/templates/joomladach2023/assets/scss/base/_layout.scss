@@ -18,6 +18,29 @@
     padding-left: var(--space-large);
     padding-right: var(--space-large);
   }
+  .contentsection {
+    padding: var(--space-xxlarge) 0;
+    @include lg {
+      padding: var(--space-xxxlarge) 0;
+    }
+    @each $name, $value, $invertedvalue in $colors {
+      // Background-Color
+      &.bg-#{$name} {
+        position: relative;
+        &:before {
+          position: absolute;
+          left: -100vw;
+          top: 0;
+          height: 100%;
+          width: 300vw;
+          background-color: #{$value};
+          display: block;
+          z-index: -1;
+          content: " ";
+        }
+      }
+    }
+  }
   @supports (overflow-x: clip) {
     html,
     body {
