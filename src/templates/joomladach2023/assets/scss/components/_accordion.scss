@@ -15,6 +15,7 @@
         font-size: var(--size-md);
         font-weight: 600;
         transition: .25s ease-in-out;
+        font-family: var(--jdach-basefont);
         &:hover,
         &[aria-expanded="true"] {
           border-bottom: 2px solid var(--jdach-yellow);
