@@ -1,0 +1,123 @@
+@include critical(true) {
+  $backgrounds: ('darkblue': '#fff', 'midblue': '#fff', 'lightblue': '#25304F', 'yellow': '#25304F', 'green': '#25304F', 'red': '#fff');
+  $imagewidths: ('xlarge': '67%', 'large': '50%', 'default': '40%', 'small': '33%', 'xsmall': '25%');
+  $mobileimageplacements:
+    'above' '1' '2',
+    'below' '2' '1',
+    'hide' '2' '1';
+  $imagealignments:
+    'left' '1' '2',
+    'right' '2' '1';
+
+  .imagetext {
+    // Variables
+    @each $background, $color in $backgrounds {
+      &.bg-#{$background} {
+        --backgroundcolor: var(--jdach-#{$background});
+        --color: #{$color}
+      }
+    }
+    @each $width, $value in $imagewidths {
+      &.imagewidth-#{$width} {
+        --imagewidth: #{$value};
+      }
+    }
+    @each $name, $orderimage, $ordercontent in $mobileimageplacements {
+      &.mobileimageplacement-#{$name} {
+        --mobileorderimage: #{$orderimage};
+        --mobileordercontent: #{$ordercontent};
+      }
+    }
+    @each $name, $orderimage, $ordercontent in $imagealignments {
+      &.imagealignment-#{$name} {
+        --orderimage: #{$orderimage};
+        --ordercontent: #{$ordercontent};
+      }
+    }
+    // Styles
+    display: flex;
+    flex-direction: column;
+    background: var(--backgroundcolor);
+    color: var(--color);
+    @for $i from 1 through 6 {
+      h#{$i}
+      .h#{$i} {
+        color: var(--color);
+      }
+    }
+    @include md {
+      flex-direction: row;
+    }
+    &__imagecontainer {
+      order: var(--mobileorderimage);
+      @include md {
+        flex-shrink: 0;
+        width: var(--imagewidth);
+        order: var(--orderimage);
+      }
+      @include max-lg {
+        .mobileimageplacement-hide & {
+          display: none;
+        }
+      }
+      img, picture {
+        display: block;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    &__contentcontainer {
+      order: var(--ordercontent);
+      padding: var(--space-large) var(--space-large);
+      &-content {
+        > *:first-child {
+          margin-top: 0;
+        }
+        > *:last-child {
+          margin-bottom: 0;
+        }
+      }
+      &-ctas {
+        margin-top: var(--space-large);
+      }
+      @include md {
+        padding: var(--space-xxxlarge) var(--space-large);
+      }
+      @include lg {
+        padding: var(--space-xxxlarge) var(--space-xxlarge);
+      }
+      @include max-md {
+        order: var(--mobileordercontent);
+      }
+    }
+  }
+  // Conditional-Styles if Placed in Contentcontainer
+  .contentcontainer .imagetext {
+    width: 100vw;
+    transform: translateX(calc(var(--space-large) * -1));
+    @include rwd(1340) {
+      --contentpadding: calc((100vw - var(--contentcontainerwidth) + var(--space-large) * 2) / 2);
+      transform: translateX(calc((100vw - var(--contentcontainerwidth) + var(--space-large) * 2) / -2));
+      &.imagealignment-right {
+        .imagetext__contentcontainer {
+          padding-left: var(--contentpadding);
+        }
+      }
+      &.imagealignment-left {
+        .imagetext__contentcontainer {
+          padding-right: var(--contentpadding);
+        }
+      }
+    }
+  }
+  .contentcontainer .item-page:not(.item-page--landing) .imagetext {
+    width: 100%;
+    transform: initial;
+    @include md {
+      .imagetext__contentcontainer {
+        padding: var(--space-xxxlarge) var(--space-xxlarge);
+      }
+    }
+  }
+}

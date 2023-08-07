@@ -70,7 +70,8 @@
     --bordercolor: var(--jdach-darkblue);
     --borderhovercolor: var(--jdach-darkblue);
     .bg-darkblue &,
-    .bg-midblue & {
+    .bg-midblue &,
+    .bg-red & {
       --bgcolor: transparent;
       --bghovercolor: #fff;
       --color: #fff;

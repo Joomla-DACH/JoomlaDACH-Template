@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="3.1.0" client="site" method="upgrade">
-    <name>Joomla DACH - JDACH Hero</name>
+    <name>Joomla DACH - Bild-Text-Modul</name>
     <author>djumla GmbH</author>
     <version>1.0.0</version>
-    <description>Modul zur Darstellung des Headerbereichs</description>
+    <description>Modul zur Darstellung eines Bild-Text-Bereichs</description>
     <files>
-        <filename>mod_jdachhero.xml</filename>
-        <filename module="mod_jdachhero.php">mod_jdachhero.php</filename>
+        <filename>mod_imagetext.xml</filename>
+        <filename module="mod_imagetext.php">mod_imagetext.php</filename>
         <filename>index.html</filename>
         <filename>tmpl/default.php</filename>
         <filename>tmpl/index.html</filename>>
@@ -14,6 +14,18 @@
     <config>
         <fields name="params">
             <fieldset name="basic">
+                <field
+                    name="imagewidth"
+                    type="list"
+                    label="Bildbreite"
+                    default="default"
+                >
+                    <option value="xlarge">67%</option>
+                    <option value="large">50%</option>
+                    <option value="default">40%</option>
+                    <option value="small">33%</option>
+                    <option value="xsmall">25%</option>
+                </field>
                 <field
                     name="background"
                     type="list"
@@ -28,15 +40,38 @@
                     <option value="red">Red</option>
                 </field>
                 <field
-                    name="title"
-                    type="text"
-                    label="Titel"
-                    filter="safehtml" />
+                    name="mobileimageplacement"
+                    type="list"
+                    label="Bildausrichtung auf mobilen Endgeräten"
+                    default="above"
+                >
+                    <option value="above">Oben</option>
+                    <option value="below">Unten</option>
+                    <option value="hide">Verstecken</option>
+                </field>
+                <field
+                    name="imagealignment"
+                    type="list"
+                    label="Bildausrichtung auf Desktop-Endgeräten"
+                    default="right"
+                >
+                    <option value="right">Rechts</option>
+                    <option value="left">Links</option>
+                </field>
                 <field
                     name="image"
                     type="media"
                     label="Bild"
                     required="true"/>
+                <field
+                    name="image-mobile"
+                    type="media"
+                    label="Bild auf mobilen Endgeräten" />
+                <field
+                    name="content"
+                    type="editor"
+                    label="Inhalt"
+                    filter="safehtml" />
                 <field
                     name="ctas"
                     type="subform"
