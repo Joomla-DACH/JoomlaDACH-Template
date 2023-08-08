@@ -1,0 +1,70 @@
+@include critical(true) {
+  .com-finder {
+    padding: var(--space-xxlarge) 0;
+    &__form {
+      background: var(--jdach-yellow);
+      padding: var(--space-large);
+      border-radius: 16px;
+      .input-group {
+        display: flex;
+        gap: var(--space-base);
+        flex-direction: column;
+        div {
+          flex-grow: 1;
+          input {
+            width: 100%;
+          }
+        }
+        @include md {
+          flex-direction: row;
+          align-items: center;
+        }
+        > * {
+          width: 100%;
+          height: auto;
+          @include md {
+            width: auto;
+          }
+        }
+        > [data-bs-toggle] {
+          display: none;
+        }
+      }
+      @include lg {
+        border-radius: 32px;
+        padding: var(--space-xlarge);
+      }
+      .filter-branch {
+        display: grid;
+        grid-gap: var(--space-small);
+        select {
+          width: 100%;
+        }
+        @include sm {
+          grid-template-columns: repeat(2, 1fr);
+          grid-gap: var(--space-large);
+        }
+        @include md {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+    }
+    &__tips {
+      padding: var(--space-large) 0;
+      font-size: var(--size-sm);
+      p {
+        margin: 0;
+      }
+    }
+    .result__item {
+      .result__title-text {
+        display: block;
+        font-weight: 700;
+      }
+      .result__title-url,
+      .result__taxonomy {
+        font-size: var(--size-sm);
+      }
+    }
+  }
+}
