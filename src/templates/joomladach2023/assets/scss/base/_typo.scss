@@ -14,6 +14,11 @@
     color: var(--jdach-lightblue);
   }
 
+  mark {
+    background: var(--jdach-darkblue) !important;
+    color: #fff !important;
+  }
+
   // Headings
 
   h1,.h1 {
@@ -59,6 +64,18 @@
     background: #fff;
     border: 1px solid var(--jdach-darkblue);
     border-radius: 13px;
+  }
+  label {
+    font-size: var(--size-sm);
+    font-weight: 700;
+  }
+  select {
+    padding: var(--space-base);
+    font-family: var(--jdach-basefont);
+    background: #fff;
+    border: 1px solid var(--jdach-darkblue);
+    border-radius: 13px;
+    appearance: none;
   }
 
   // Font-Size
@@ -128,5 +145,10 @@
     src: url('../font/source-sans-pro-v21-latin-900.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
     url('../font/source-sans-pro-v21-latin-900.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   }
-
+  select {
+    background-image: url('../img/icon/arrow_blue-down.svg');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 16px) center;
+    background-size: 10px auto;
+  }
 }
