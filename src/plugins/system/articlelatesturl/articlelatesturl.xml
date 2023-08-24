@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="4.0" type="plugin" group="system" method="upgrade">
+    <name>System - Article Latest Catlink</name>
+    <author>David Jardin | djumla GmbH</author>
+    <creationDate>January 2021</creationDate>
+    <copyright>(C) David Jardin - djumla GmbH. All rights reserved.</copyright>
+    <license>GNU General Public License version 3 or later; see LICENSE.txt</license>
+    <authorEmail>info@djumla.de</authorEmail>
+    <authorUrl>www.djumla.de</authorUrl>
+    <version>1.0.0</version>
+    <description>Injects the missing tag filter to category list parameters</description>
+    <files>
+        <file plugin="articlelatesturl">articlelatesturl.php</file>
+    </files>
+</extension>
