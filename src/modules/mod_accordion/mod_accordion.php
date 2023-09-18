@@ -14,5 +14,5 @@ defined('_JEXEC') or die;
 use Joomla\CMS\Factory;
 $document = Factory::getDocument();
 
-$moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'), ENT_COMPAT, 'UTF-8');
+$moduleclass_sfx  = htmlspecialchars($params->get('class_sfx', ''), ENT_COMPAT, 'UTF-8');
 require JModuleHelper::getLayoutPath('mod_accordion', $params->get('layout', 'default'));
