@@ -51,6 +51,31 @@
     line-height: 1.25;
   }
 
+  // Tables
+  .responsivetablecontainer {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    table {
+      caption-side: bottom;
+      border-collapse: collapse;
+    }
+  }
+  thead {
+    border-bottom: 2px solid var(--jdach-darkblue);
+    text-transform: uppercase;
+  }
+  tbody {
+    tr {
+      &:nth-child(odd) {
+        background: var(--jdach-muted);
+      }
+    }
+  }
+
+  td,th {
+    padding: var(--space-small) var(--space-base);
+  }
+
 
   // Input
   input[type="text"],

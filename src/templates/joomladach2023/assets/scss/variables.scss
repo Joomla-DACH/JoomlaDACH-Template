@@ -25,6 +25,8 @@ $screen-xxl-min: 1680px;
   --jdach-yellow: #FEC34D;
   --jdach-green: #89C764;
   --jdach-red: #F44321;
+  --jdach-lightgrey: #8790AC;
+  --jdach-muted: #EBEFF2;
 }
 
 // Typo
@@ -78,6 +80,7 @@ $colors:
         'red' '#F44321' '#fff',
         'white' '#fff' '#25304F',
         'midblue' '#2D395A' '#fff',
+        'muted' '#EBEFF2' '#25304F'
         'lightgrey' '#8790AC' '#25304F';
 $fws: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 $fs: sm, df, md, lg, xl, xxl;
