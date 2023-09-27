@@ -72,22 +72,6 @@
             }
           }
         }
-        .tags {
-          list-style: none;
-          display: flex;
-          flex-wrap: wrap;
-          padding: 0;
-          margin: 0;
-          gap: var(--space-smaller);
-          .btn {
-            border-radius: 8px;
-            border: 0;
-            padding: calc(var(--space-smaller) * .8) var(--space-smaller);
-            line-height: 1;
-            background: var(--jdach-muted);
-            color: var(--jdach-darkblue);
-          }
-        }
         .article-info {
           margin: 0;
           font-size: var(--size-sm);
