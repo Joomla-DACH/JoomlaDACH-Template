@@ -36,7 +36,7 @@ $isExpired         = !is_null($this->item->publish_down) && $this->item->publish
 ?>
 <div class="com-content-article item-page<?php echo $this->pageclass_sfx; ?>" itemscope itemtype="https://schema.org/Article">
   <meta itemprop="inLanguage" content="<?php echo ($this->item->language === '*') ? Factory::getApplication()->get('language') : $this->item->language; ?>">
-  <?php echo LayoutHelper::render('joomla.content.intro_image', $this->item); ?>
+  <?php echo LayoutHelper::render('joomla.content.full_image', $this->item); ?>
     <div class="com-content-article__contentcontainer">
         <?php if ($this->params->get('show_page_heading')) : ?>
           <div class="page-header">
