@@ -30,10 +30,16 @@ $currentDate   = Factory::getDate()->format('Y-m-d H:i:s');
 $isUnpublished = ($this->item->state == ContentComponent::CONDITION_UNPUBLISHED || $this->item->publish_up > $currentDate)
     || ($this->item->publish_down < $currentDate && $this->item->publish_down !== null);
 
+$customFields = $this->item->jcfields;
+foreach ($customFields as $customField)
+{
+    $customFields[$customField->name] = $customField;
+}
+
 ?>
 
 <!-- Set Readmore Link -->
-<?php if ($params->get('show_readmore') && $this->item->readmore) :
+<?php if ($this->item->readmore) :
     if ($params->get('access-view')) :
         $link = Route::_(RouteHelper::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language));
     else :
@@ -53,7 +59,6 @@ $isUnpublished = ($this->item->state == ContentComponent::CONDITION_UNPUBLISHED 
         <div class="system-unpublished">
     <?php endif; ?>
     <div class="item-content__text">
-        <span class="txt-600 txt-lightblue txt-sm"><?php echo $this->item->category_title; ?></span>
         <?php echo LayoutHelper::render('joomla.content.blog_style_default_item_title', $this->item); ?>
         <span class="txt-lightgrey txt-sm"><?php echo JFactory::getDate($this->item->publish_up)->format('d.m.Y'); ?></span>
         <?php if ($canEdit) : ?>
@@ -80,7 +85,14 @@ $isUnpublished = ($this->item->state == ContentComponent::CONDITION_UNPUBLISHED 
         <?php echo $this->item->event->beforeDisplayContent; ?>
 
         <?php echo $this->item->introtext; ?>
-
+        <ul class="serviceproviderdirectory__item-areasofexpertise">
+            <li class="areasofexpertise__item btn btn-sm"><?php echo $customFields['haupttaetigkeitsbereich']->value ;?></li>
+            <?php foreach ($customFields['weitere-taetigkeitsbereiche']->rawvalue as $area): ?>
+              <li class="areasofexpertise__item btn btn-sm">
+                <?php echo $area; ?>
+              </li>
+            <?php endforeach; ?>
+        </ul>
         <?php if ($info == 1 || $info == 2) : ?>
             <?php if ($useDefList) : ?>
                 <?php echo LayoutHelper::render('joomla.content.info_block', ['item' => $this->item, 'params' => $params, 'position' => 'below']); ?>
@@ -90,6 +102,9 @@ $isUnpublished = ($this->item->state == ContentComponent::CONDITION_UNPUBLISHED 
             <?php endif; ?>
         <?php endif; ?>
     </div>
+    <?php if ($customFields['website']->value): ?>
+      <a class="btn btn-primary serviceproviderdirectory__item-link" href="<?php echo $customFields['website']->rawvalue; ?>">Zur Website</a>
+    <?php endif; ?>
     <?php if ($params->get('show_readmore') && $this->item->readmore) : ?>
         <?php echo LayoutHelper::render('joomla.content.readmore', ['item' => $this->item, 'params' => $params, 'link' => $link]); ?>
     <?php endif; ?>
