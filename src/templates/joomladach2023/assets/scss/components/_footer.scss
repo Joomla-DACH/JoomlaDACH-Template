@@ -2,6 +2,9 @@
   .footer {
     color: #fff;
     margin-top: var(--space-xlarge);
+    .removefootermargin & {
+      margin-top: 0;
+    }
     @include md {
       margin-top: var(--space-xxlarge);
     }
