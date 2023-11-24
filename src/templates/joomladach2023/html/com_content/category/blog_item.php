@@ -55,11 +55,9 @@ $isUnpublished = ($this->item->state == ContentComponent::CONDITION_UNPUBLISHED 
     <div class="item-content__text">
         <span class="txt-600 txt-lightblue txt-sm"><?php echo $this->item->category_title; ?></span>
         <?php echo LayoutHelper::render('joomla.content.blog_style_default_item_title', $this->item); ?>
-        <span class="txt-lightgrey txt-sm"><?php echo JFactory::getDate($this->item->publish_up)->format('d.m.Y'); ?></span>
         <?php if ($canEdit) : ?>
             <?php echo LayoutHelper::render('joomla.content.icons', ['params' => $params, 'item' => $this->item]); ?>
         <?php endif; ?>
-
         <?php // @todo Not that elegant would be nice to group the params ?>
         <?php $useDefList = ($params->get('show_modify_date') || $params->get('show_publish_date') || $params->get('show_create_date')
             || $params->get('show_hits') || $params->get('show_category') || $params->get('show_parent_category') || $params->get('show_author') || $assocParam); ?>
@@ -82,9 +80,7 @@ $isUnpublished = ($this->item->state == ContentComponent::CONDITION_UNPUBLISHED 
         <?php echo $this->item->introtext; ?>
 
         <?php if ($info == 1 || $info == 2) : ?>
-            <?php if ($useDefList) : ?>
-                <?php echo LayoutHelper::render('joomla.content.info_block', ['item' => $this->item, 'params' => $params, 'position' => 'below']); ?>
-            <?php endif; ?>
+
             <?php if ($params->get('show_tags', 1) && !empty($this->item->tags->itemTags)) : ?>
                 <?php echo LayoutHelper::render('joomla.content.tags', $this->item->tags->itemTags); ?>
             <?php endif; ?>
