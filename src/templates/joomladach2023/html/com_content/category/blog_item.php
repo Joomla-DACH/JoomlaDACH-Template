@@ -44,11 +44,12 @@ $isUnpublished = ($this->item->state == ContentComponent::CONDITION_UNPUBLISHED 
         $link->setVar('return', base64_encode(RouteHelper::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language)));
     endif; ?>
 <?php endif; ?>
-
-<a class="item-imagecontainer" href="<?php echo $link; ?>">
-    <?php echo LayoutHelper::render('joomla.content.intro_image', $this->item); ?>
-</a>
-<div class="item-content">
+<?php if (!empty(json_decode($this->item->images)->image_intro)): ?>
+  <a class="item-imagecontainer" href="<?php echo $link; ?>">
+      <?php echo LayoutHelper::render('joomla.content.intro_image', $this->item); ?>
+  </a>
+<?php endif; ?>
+<div class="item-content <?php if (empty(json_decode($this->item->images)->image_intro)): ?>item-content--fullwidth<?php endif; ?>">
     <?php if ($isUnpublished) : ?>
         <div class="system-unpublished">
     <?php endif; ?>
