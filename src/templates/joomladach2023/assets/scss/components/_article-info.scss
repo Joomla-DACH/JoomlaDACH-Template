@@ -1,0 +1,12 @@
+@include critical(true) {
+  .article-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--space-base);
+    dt,dd {
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
