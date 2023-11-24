@@ -5,6 +5,7 @@
       align-items: baseline;
       gap: var(--space-base);
       justify-content: flex-end;
+      flex-wrap: wrap;
       a {
         text-decoration: none;
         opacity: .8;
