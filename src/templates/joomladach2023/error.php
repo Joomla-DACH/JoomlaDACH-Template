@@ -54,62 +54,75 @@ $this->getWebAssetManager()->registerAndUseScript(
 </head>
 <body class="<?php echo $pageclass ? htmlspecialchars($pageclass) : 'default'; ?>">
 <header class="headerbar">
+    <div class="headerbar__content contentcontainer">
+        <div class="headerbar__content-mainbar">
+            <div class="headerbar__content-logomark">
+                <a href="/">
+                    <img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/assets/img/logomark.svg" width="47" height=47" alt="Zur Startseite" />
+                </a>
+            </div>
+        </div>
+    </div>
 </header>
-<main class="errorpage">
-  <div class="error">
-    <div id="outline">
-      <div id="errorboxoutline">
-        <div id="errorboxheader"><?php echo $this->error->getCode(); ?> - <?php echo htmlspecialchars($this->error->getMessage(), ENT_QUOTES, 'UTF-8'); ?></div>
-        <div id="errorboxbody">
-          <p><strong><?php echo Text::_('JERROR_LAYOUT_NOT_ABLE_TO_VISIT'); ?></strong></p>
-          <ol>
-            <li><?php echo Text::_('JERROR_LAYOUT_AN_OUT_OF_DATE_BOOKMARK_FAVOURITE'); ?></li>
-            <li><?php echo Text::_('JERROR_LAYOUT_SEARCH_ENGINE_OUT_OF_DATE_LISTING'); ?></li>
-            <li><?php echo Text::_('JERROR_LAYOUT_MIS_TYPED_ADDRESS'); ?></li>
-            <li><?php echo Text::_('JERROR_LAYOUT_YOU_HAVE_NO_ACCESS_TO_THIS_PAGE'); ?></li>
-            <li><?php echo Text::_('JERROR_LAYOUT_REQUESTED_RESOURCE_WAS_NOT_FOUND'); ?></li>
-            <li><?php echo Text::_('JERROR_LAYOUT_ERROR_HAS_OCCURRED_WHILE_PROCESSING_YOUR_REQUEST'); ?></li>
-          </ol>
-          <p><strong><?php echo Text::_('JERROR_LAYOUT_PLEASE_TRY_ONE_OF_THE_FOLLOWING_PAGES'); ?></strong></p>
-          <ul>
-            <li><a href="<?php echo Uri::root(true); ?>/index.php"><?php echo Text::_('JERROR_LAYOUT_HOME_PAGE'); ?></a></li>
-          </ul>
-          <p><?php echo Text::_('JERROR_LAYOUT_PLEASE_CONTACT_THE_SYSTEM_ADMINISTRATOR'); ?></p>
-          <div id="techinfo">
-            <p>
-                <?php echo htmlspecialchars($this->error->getMessage(), ENT_QUOTES, 'UTF-8'); ?>
-                <?php if ($this->debug) : ?>
-                  <br><?php echo htmlspecialchars($this->error->getFile(), ENT_QUOTES, 'UTF-8');?>:<?php echo $this->error->getLine(); ?>
-                <?php endif; ?>
-            </p>
-              <?php if ($this->debug) : ?>
-                <div>
-                    <?php echo $this->renderBacktrace(); ?>
-                    <?php // Check if there are more Exceptions and render their data as well ?>
-                    <?php if ($this->error->getPrevious()) : ?>
-                        <?php $loop = true; ?>
-                        <?php // Reference $this->_error here and in the loop as setError() assigns errors to this property and we need this for the backtrace to work correctly ?>
-                        <?php // Make the first assignment to setError() outside the loop so the loop does not skip Exceptions ?>
-                        <?php $this->setError($this->_error->getPrevious()); ?>
-                        <?php while ($loop === true) : ?>
-                        <p><strong><?php echo Text::_('JERROR_LAYOUT_PREVIOUS_ERROR'); ?></strong></p>
-                        <p>
-                            <?php echo htmlspecialchars($this->_error->getMessage(), ENT_QUOTES, 'UTF-8'); ?>
-                          <br><?php echo htmlspecialchars($this->_error->getFile(), ENT_QUOTES, 'UTF-8');?>:<?php echo $this->_error->getLine(); ?>
-                        </p>
-                            <?php echo $this->renderBacktrace(); ?>
-                            <?php $loop = $this->setError($this->_error->getPrevious()); ?>
-                        <?php endwhile; ?>
-                        <?php // Reset the main error object to the base error ?>
-                        <?php $this->setError($this->error); ?>
+<main>
+    <div class="main__content errorpage">
+      <div class="error contentcontainer">
+        <div id="outline">
+          <div id="errorboxoutline">
+            <div id="errorboxheader">
+                <h1><?php echo $this->error->getCode(); ?> - <?php echo htmlspecialchars($this->error->getMessage(), ENT_QUOTES, 'UTF-8'); ?></h1>
+            </div>
+            <div id="errorboxbody">
+              <p><strong><?php echo Text::_('JERROR_LAYOUT_NOT_ABLE_TO_VISIT'); ?></strong></p>
+              <ol>
+                <li><?php echo Text::_('JERROR_LAYOUT_AN_OUT_OF_DATE_BOOKMARK_FAVOURITE'); ?></li>
+                <li><?php echo Text::_('JERROR_LAYOUT_SEARCH_ENGINE_OUT_OF_DATE_LISTING'); ?></li>
+                <li><?php echo Text::_('JERROR_LAYOUT_MIS_TYPED_ADDRESS'); ?></li>
+                <li><?php echo Text::_('JERROR_LAYOUT_YOU_HAVE_NO_ACCESS_TO_THIS_PAGE'); ?></li>
+                <li><?php echo Text::_('JERROR_LAYOUT_REQUESTED_RESOURCE_WAS_NOT_FOUND'); ?></li>
+                <li><?php echo Text::_('JERROR_LAYOUT_ERROR_HAS_OCCURRED_WHILE_PROCESSING_YOUR_REQUEST'); ?></li>
+              </ol>
+              <p><strong><?php echo Text::_('JERROR_LAYOUT_PLEASE_TRY_ONE_OF_THE_FOLLOWING_PAGES'); ?></strong></p>
+              <ul>
+                <li><a href="<?php echo Uri::root(true); ?>/index.php"><?php echo Text::_('JERROR_LAYOUT_HOME_PAGE'); ?></a></li>
+              </ul>
+              <p><?php echo Text::_('JERROR_LAYOUT_PLEASE_CONTACT_THE_SYSTEM_ADMINISTRATOR'); ?></p>
+              <div id="techinfo">
+                <p>
+                    <?php echo htmlspecialchars($this->error->getMessage(), ENT_QUOTES, 'UTF-8'); ?>
+                    <?php if ($this->debug) : ?>
+                      <br><?php echo htmlspecialchars($this->error->getFile(), ENT_QUOTES, 'UTF-8');?>:<?php echo $this->error->getLine(); ?>
                     <?php endif; ?>
-                </div>
-              <?php endif; ?>
+                </p>
+                  <?php if ($this->debug) : ?>
+                    <div>
+                        <?php echo $this->renderBacktrace(); ?>
+                        <?php // Check if there are more Exceptions and render their data as well ?>
+                        <?php if ($this->error->getPrevious()) : ?>
+                            <?php $loop = true; ?>
+                            <?php // Reference $this->_error here and in the loop as setError() assigns errors to this property and we need this for the backtrace to work correctly ?>
+                            <?php // Make the first assignment to setError() outside the loop so the loop does not skip Exceptions ?>
+                            <?php $this->setError($this->_error->getPrevious()); ?>
+                            <?php while ($loop === true) : ?>
+                            <p><strong><?php echo Text::_('JERROR_LAYOUT_PREVIOUS_ERROR'); ?></strong></p>
+                            <p>
+                                <?php echo htmlspecialchars($this->_error->getMessage(), ENT_QUOTES, 'UTF-8'); ?>
+                              <br><?php echo htmlspecialchars($this->_error->getFile(), ENT_QUOTES, 'UTF-8');?>:<?php echo $this->_error->getLine(); ?>
+                            </p>
+                                <?php echo $this->renderBacktrace(); ?>
+                                <?php $loop = $this->setError($this->_error->getPrevious()); ?>
+                            <?php endwhile; ?>
+                            <?php // Reset the main error object to the base error ?>
+                            <?php $this->setError($this->error); ?>
+                        <?php endif; ?>
+                    </div>
+                  <?php endif; ?>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 </main>
 <footer class="footer">
 </footer>
