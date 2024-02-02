@@ -84,10 +84,10 @@ foreach ($customFields as $customField)
         <?php echo $this->item->event->beforeDisplayContent; ?>
 
         <p class="txt-lightgrey txt-sm">
-            <?php echo $customFields['plz']->value; ?>,
+            <?php echo $customFields['plz']->value; ?> <?php echo $customFields['ort']->value; ?>,
             <?php foreach (["region-de", "region-at", "region-ch"] as $region): ?>
                 <?php if ($customFields[$region]->value): ?>
-                    <?php echo reset($customFields[$region]->rawvalue); break; ?>
+                    <?php echo explode(",", reset($customFields[$region]->rawvalue))[1]; break; ?>
                 <?php endif; ?>
             <?php endforeach; ?>
         </p>
