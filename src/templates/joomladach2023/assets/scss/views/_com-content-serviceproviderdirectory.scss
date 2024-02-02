@@ -16,6 +16,7 @@
         align-items: center;
         padding: var(--space-large);
         margin-bottom: var(--space-large);
+        aspect-ratio: 3 / 1;
         &:hover {
           .item-image img {
             transform: scale(1);
@@ -52,6 +53,86 @@
       }
       &-link {
         margin-top: var(--space-base);
+      }
+    }
+
+    form[name=filtermagic] {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+      background: var(--jdach-muted);
+      padding: var(--space-small);
+      margin: var(--space-large) 0;
+
+
+      @include md {
+        padding: var(--space-base);
+      }
+
+      > .filtermagic-field-filter {
+        width: 100%;
+        margin: var(--space-small) 0;
+
+        @include md {
+          width: calc(33% - var(--space-base));
+        }
+      }
+
+      > .filtermagic-field-filter > * {
+        width: 100%;
+      }
+
+      > .filtermagic-field-filter:nth-child(5) {
+        width: 100%;
+
+        > .visually-hidden {
+          position: static;
+          overflow: visible;
+          height: auto;
+          margin: auto;
+          clip: auto;
+        }
+
+        @include md {
+          display: flex;
+
+          > .visually-hidden {
+            width: auto;
+            margin-right: var(--space-small);
+          }
+        }
+      }
+
+
+      joomla-field-fancy-select {
+        > .choices {
+          width: auto
+        }
+
+        .choices__inner {
+          background: none;
+
+          .choices__item {
+            background-color: var(--jdach-midblue) !important;
+            opacity: 1;
+          }
+
+          .choices__button_joomla {
+            margin-left: var(--space-smaller);
+            text-indent: -9000px;
+            border: none;
+            height: 1.3em;
+            width: 1.3em;
+            vertical-align: middle;
+            border-radius: 4px;
+            background-size: .8em;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: var(--jdach-red);
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='-4 -4 32 32' xmlns='http://www.w3.org/2000/svg' height='32' width='32'%3E%3Cpath d='m0.75 23.249 22.5 -22.5' fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='8'%3E%3C/path%3E%3Cpath d='M23.25 23.249 0.75 0.749' fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='8'%3E%3C/path%3E%3C/svg%3E");
+          }
+        }
       }
     }
   }
