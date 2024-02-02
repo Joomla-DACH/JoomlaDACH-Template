@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form addfieldprefix="Dionysopoulos\Plugin\System\FilterMagic\Field">
+    <fields name="filter">
+        <field
+            name="region-de"
+            type="custom"
+            customfield="1"
+            default=""
+            class=""
+            layout="joomla.form.field.list"
+        >
+        </field>
+        <field
+            name="region-at"
+            type="custom"
+            customfield="1"
+            default=""
+            class=""
+            layout="joomla.form.field.list"
+        >
+        </field>
+        <field
+            name="region-ch"
+            type="custom"
+            customfield="1"
+            default=""
+            class=""
+            layout="joomla.form.field.list"
+        >
+        </field>
+        <field
+            name="taetigkeitsbereich"
+            type="custom"
+            customfield="1"
+            default=""
+            class=""
+            layout="joomla.form.field.list-fancy-select"
+        >
+        </field>
+    </fields>
+</form>
