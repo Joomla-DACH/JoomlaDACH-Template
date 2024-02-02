@@ -174,7 +174,11 @@ foreach ($customFields as $customField)
             <p>
                 <?php echo $customFields['adresse']->value ;?><br/>
                 <?php echo $customFields['plz']->value ;?> <?php echo $customFields['ort']->value ;?><br/>
-                <?php echo $customFields['land']->value ;?>
+                <?php foreach (["region-de", "region-at", "region-ch"] as $region): ?>
+                    <?php if ($customFields[$region]->value): ?>
+                        <?php echo reset($customFields[$region]->rawvalue); break; ?>
+                    <?php endif; ?>
+                <?php endforeach; ?>
             </p>
           </div>
         </div>
