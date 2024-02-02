@@ -1,0 +1,23 @@
+@include critical(false) {
+  .com-users-login, .com-users-registration, .com-users-profile__edit {
+    padding: var(--space-large) 0;
+
+    .control-group {
+      margin: var(--space-small) 0;
+    }
+
+    .form-control-feedback {
+      display: none;
+    }
+
+    input[type=password] + button {
+      display: none;
+    }
+
+    div.list-group {
+      > a {
+        display: block;
+      }
+    }
+  }
+}
