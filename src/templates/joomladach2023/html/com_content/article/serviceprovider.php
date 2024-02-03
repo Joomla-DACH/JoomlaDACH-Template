@@ -122,7 +122,7 @@ foreach ($customFields as $customField)
                     <?php echo $this->item->text; ?>
 
                     <?php if ($customFields['website']->value): ?>
-                      <a class="btn btn-primary serviceproviderdirectory__item-link" href="<?php echo $customFields['website']->rawvalue; ?>">Zur Website</a>
+                      <a class="btn btn-primary serviceproviderdirectory__item-link" href="<?php echo $customFields['website']->rawvalue; ?>" target="_blank" title="<?php echo $customFields['website']->rawvalue; ?>">Zur Website</a>
                     <?php endif; ?>
                 </div>
 
@@ -167,19 +167,27 @@ foreach ($customFields as $customField)
           </div>
           <div class="serviceproviderpage__content-info">
             <h3>Kontakt</h3>
-            <span><?php echo $customFields['kontakt-name']->value ;?></span><br/>
-            <a href="<?php echo $customFields['kontakt-e-mail']->value ;?>"><?php echo $customFields['kontakt-e-mail']->value ;?></a><br/>
-            <a tel="<?php echo $customFields['telefon']->value ;?>"><?php echo $customFields['telefon']->value ;?></a>
-            <h3>Adresse</h3>
-            <p>
-                <?php echo $customFields['adresse']->value ;?><br/>
-                <?php echo $customFields['plz']->value ;?> <?php echo $customFields['ort']->value ;?><br/>
-                <?php foreach (["region-de", "region-at", "region-ch"] as $region): ?>
+              <address>
+              <?php if ($customFields['kontakt-name']->value): ?>
+                    <span><?php echo $customFields['kontakt-name']->value ;?></span><br/>
+              <?php endif; ?>
+              <?php if ($customFields['kontakt-e-mail']->value): ?>
+                    <a href="mailto:<?php echo $customFields['kontakt-e-mail']->value ;?>" target="_blank" title="<?php echo $customFields['kontakt-e-mail']->value ;?>"><?php echo $customFields['kontakt-e-mail']->value ;?></a><br/>        
+              <?php endif; ?>
+              <?php if ($customFields['telefon']->value): ?>
+                    <a tel="tel:<?php echo $customFields['telefon']->value ;?>" target="_blank" title="<?php echo $customFields['telefon']->value ;?>"><?php echo $customFields['telefon']->value ;?></a>
+              <?php endif; ?>
+              <h3>Adresse</h3>
+                  <p>
+                  <?php echo $customFields['adresse']->value ;?><br/>
+                  <?php echo $customFields['plz']->value ;?> <?php echo $customFields['ort']->value ;?><br/>
+                  <?php foreach (["region-de", "region-at", "region-ch"] as $region): ?>
                     <?php if ($customFields[$region]->value): ?>
                         <?php echo reset($customFields[$region]->rawvalue); break; ?>
                     <?php endif; ?>
-                <?php endforeach; ?>
-            </p>
+                  <?php endforeach; ?>
+                  </p>
+              </address>
           </div>
         </div>
     </div>
