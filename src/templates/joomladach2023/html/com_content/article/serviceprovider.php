@@ -175,7 +175,7 @@ foreach ($customFields as $customField)
                     <a href="mailto:<?php echo $customFields['kontakt-e-mail']->value ;?>" target="_blank" title="<?php echo $customFields['kontakt-e-mail']->value ;?>"><?php echo $customFields['kontakt-e-mail']->value ;?></a><br/>        
               <?php endif; ?>
               <?php if ($customFields['telefon']->value): ?>
-                    <a tel="tel:<?php echo $customFields['telefon']->value ;?>" target="_blank" title="<?php echo $customFields['telefon']->value ;?>"><?php echo $customFields['telefon']->value ;?></a>
+                    <a href="tel:<?php echo $customFields['telefon']->value ;?>" target="_blank" title="<?php echo $customFields['telefon']->value ;?>"><?php echo $customFields['telefon']->value ;?></a>
               <?php endif; ?>
               <h3>Adresse</h3>
                   <p>
