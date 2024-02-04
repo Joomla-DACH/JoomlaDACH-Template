@@ -94,6 +94,7 @@ foreach ($customFields as $customField)
 
         <?php echo $this->item->introtext; ?>
 
+        <?php if(!empty($customFields['taetigkeitsbereich']->rawvalue)): ?>
         <ul class="serviceproviderdirectory__item-areasofexpertise">
             <?php foreach ($customFields['taetigkeitsbereich']->rawvalue as $area): ?>
               <li class="areasofexpertise__item btn btn-sm">
@@ -101,6 +102,8 @@ foreach ($customFields as $customField)
               </li>
             <?php endforeach; ?>
         </ul>
+        <?php endif; ?>
+
         <?php if ($info == 1 || $info == 2) : ?>
             <?php if ($useDefList) : ?>
                 <?php echo LayoutHelper::render('joomla.content.info_block', ['item' => $this->item, 'params' => $params, 'position' => 'below']); ?>

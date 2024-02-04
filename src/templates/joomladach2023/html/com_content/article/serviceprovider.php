@@ -111,14 +111,16 @@ foreach ($customFields as $customField)
                       echo $this->item->toc;
                   endif; ?>
                 <div itemprop="articleBody" class="com-content-article__body">
-                  <ul class="serviceproviderpage__content-areasofexpertise">
-                    <li class="areasofexpertise__item btn btn-sm"><?php echo $customFields['haupttaetigkeitsbereich']->value ;?></li>
-                      <?php foreach ($customFields['weitere-taetigkeitsbereiche']->rawvalue as $area): ?>
-                        <li class="areasofexpertise__item btn btn-sm">
-                            <?php echo $area; ?>
-                        </li>
-                      <?php endforeach; ?>
-                  </ul>
+                    <?php if(!empty($customFields['taetigkeitsbereich']->rawvalue)): ?>
+                    <ul class="serviceproviderpage__content-areasofexpertise">
+                        <?php foreach ($customFields['taetigkeitsbereich']->rawvalue as $area): ?>
+                            <li class="areasofexpertise__item btn btn-sm">
+                                <?php echo $area; ?>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                    <?php endif; ?>
+
                     <?php echo $this->item->text; ?>
 
                     <?php if ($customFields['website']->value): ?>
