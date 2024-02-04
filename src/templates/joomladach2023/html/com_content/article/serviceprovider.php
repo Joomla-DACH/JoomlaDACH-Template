@@ -44,7 +44,7 @@ foreach ($customFields as $customField)
   <meta itemprop="inLanguage" content="<?php echo ($this->item->language === '*') ? Factory::getApplication()->get('language') : $this->item->language; ?>">
     <div class="serviceproviderpage__imagearea">
         <div class="serviceproviderpage__imagearea-content">
-          <img src="<?php echo json_decode($this->item->images)->image_intro ;?>" alt="" />
+          <img src="<?php echo json_decode($this->item->images)->image_intro ;?>" alt="Logo <?php echo $this->escape($this->item->title); ?>" />
         </div>
     </div>
     <div class="com-content-article__contentcontainer">
