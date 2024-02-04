@@ -24,8 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
 for (let parentMenuItem of document.querySelectorAll('.headerbar__content-mainnav li.parent')) {
   parentMenuItem.querySelector('a, span').addEventListener('click', (e) => {
     if (window.innerWidth < 992) {
-      e.preventDefault();
-      parentMenuItem.classList.toggle('clicked');
+      if (!parentMenuItem.classList.contains('clicked')) {
+        e.preventDefault();
+        parentMenuItem.classList.add('clicked');
+      }
     }
   })
 }
