@@ -39,17 +39,16 @@ foreach ($customFields as $customField)
 ?>
 
 <!-- Set Readmore Link -->
-<?php if ($this->item->readmore) :
-    if ($params->get('access-view')) :
-        $link = Route::_(RouteHelper::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language));
-    else :
-        $menu = Factory::getApplication()->getMenu();
-        $active = $menu->getActive();
-        $itemId = $active->id;
-        $link = new Uri(Route::_('index.php?option=com_users&view=login&Itemid=' . $itemId, false));
-        $link->setVar('return', base64_encode(RouteHelper::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language)));
-    endif; ?>
-<?php endif; ?>
+<?php if ($params->get('access-view')) :
+    $link = Route::_(RouteHelper::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language));
+else :
+    $menu = Factory::getApplication()->getMenu();
+    $active = $menu->getActive();
+    $itemId = $active->id;
+    $link = new Uri(Route::_('index.php?option=com_users&view=login&Itemid=' . $itemId, false));
+    $link->setVar('return', base64_encode(RouteHelper::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language)));
+endif; ?>
+
 
 <a class="item-imagecontainer" href="<?php echo $link; ?>">
     <?php echo LayoutHelper::render('joomla.content.intro_image', $this->item); ?>
