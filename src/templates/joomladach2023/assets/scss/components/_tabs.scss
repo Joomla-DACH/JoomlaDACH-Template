@@ -46,6 +46,12 @@
     }
     &__panels {
       [role="tabpanel"] {
+        padding: var(--space-base);
+
+        @include lg {
+          padding: var(--space-xxlarge) var(--space-base);
+        }
+
         &.is-hidden {
           display: none;
         }
