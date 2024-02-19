@@ -4,12 +4,11 @@
     <author>djumla GmbH</author>
     <version>1.0.0</version>
     <description>Modul zur Darstellung von Boxen in einem n-spaltigen Grid</description>
+    <namespace path="src">JoomlaDACH\Module\Boxes</namespace>
     <files>
-        <filename>mod_boxes.xml</filename>
-        <filename module="mod_boxes.php">mod_boxes.php</filename>
-        <filename>index.html</filename>
-        <filename>tmpl/default.php</filename>
-        <filename>tmpl/index.html</filename>>
+        <folder module="mod_boxes">services</folder>
+        <folder>src</folder>
+        <folder>tmpl</folder>
     </files>
     <config>
         <fields name="params">

@@ -4,12 +4,11 @@
     <author>djumla GmbH</author>
     <version>1.0.0</version>
     <description>Modul zur Darstellung von Tabs</description>
+    <namespace path="src">JoomlaDACH\Module\Tabs</namespace>
     <files>
-        <filename>mod_tabs.xml</filename>
-        <filename module="mod_tabs.php">mod_tabs.php</filename>
-        <filename>index.html</filename>
-        <filename>tmpl/default.php</filename>
-        <filename>tmpl/index.html</filename>>
+        <folder module="mod_tabs">services</folder>
+        <folder>src</folder>
+        <folder>tmpl</folder>
     </files>
     <config>
         <fields name="params">

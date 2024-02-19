@@ -4,12 +4,11 @@
     <author>djumla GmbH</author>
     <version>1.0.0</version>
     <description>Modul zur Darstellung eines Accordions</description>
+    <namespace path="src">JoomlaDACH\Module\Accordion</namespace>
     <files>
-        <filename>mod_accordion.xml</filename>
-        <filename module="mod_accordion.php">mod_accordion.php</filename>
-        <filename>index.html</filename>
-        <filename>tmpl/default.php</filename>
-        <filename>tmpl/index.html</filename>>
+        <folder module="mod_accordion">services</folder>
+        <folder>src</folder>
+        <folder>tmpl</folder>
     </files>
     <config>
         <fields name="params">
