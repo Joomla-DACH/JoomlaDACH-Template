@@ -13,7 +13,7 @@ use Joomla\CMS\Plugin\PluginHelper;
 use Joomla\DI\Container;
 use Joomla\DI\ServiceProviderInterface;
 use Joomla\Event\DispatcherInterface;
-use JoomlaDACH\Plugin\System\Dynamicversion\Extension\Dynamicversion;
+use Kicktemp\Plugin\System\Kickvlog\Extension\Kickvlog;
 
 return new class () implements ServiceProviderInterface {
     /**
@@ -29,11 +29,10 @@ return new class () implements ServiceProviderInterface {
         $container->set(
             PluginInterface::class,
             function (Container $container) {
-                $plugin                 = PluginHelper::getPlugin('system', 'dynamicversion');
+                $plugin                 = PluginHelper::getPlugin('system', 'kickvlog');
                 $dispatcher             = $container->get(DispatcherInterface::class);
-                $documentFactory        = $container->get('document.factory');
 
-                $plugin = new Dynamicversion($dispatcher, (array) $plugin, $documentFactory);
+                $plugin = new Kickvlog($dispatcher, (array) $plugin);
                 $plugin->setApplication(Factory::getApplication());
 
                 return $plugin;
