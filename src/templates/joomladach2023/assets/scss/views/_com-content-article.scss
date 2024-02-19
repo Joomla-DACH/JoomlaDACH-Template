@@ -17,6 +17,14 @@
       @include rwd(1340) {
         transform: translateX(calc((100vw - var(--contentcontainerwidth) + var(--space-large) * 2) / -2));
       }
+      + .com-content-article__contentcontainer {
+        @include lg {
+          margin-top: calc(var(--space-xxxlarge) * -1);
+        }
+        @include rwd(1340) {
+          margin-top: calc((var(--contentcontainerwidth) - var(--maxcontentwidth)) / -2);
+        }
+      }
     }
     &__contentcontainer {
       background: #fff;
@@ -31,11 +39,9 @@
       @include lg {
         border-radius: 32px;
         padding: var(--space-xxxlarge) var(--space-xlarge);
-        margin-top: calc(var(--space-xxxlarge) * -1);
       }
       @include rwd(1340) {
         padding: calc((var(--contentcontainerwidth) - var(--maxcontentwidth)) / 2);
-        margin-top: calc((var(--contentcontainerwidth) - var(--maxcontentwidth)) / -2);
       }
       .page-header {
         h1 {
