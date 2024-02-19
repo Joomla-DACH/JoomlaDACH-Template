@@ -1,0 +1,13 @@
+@include critical(true) {
+  .videoblog {
+    .item-content {
+      .page-header h1 {
+        color: var(--articlecolor);
+      }
+      .tags .btn {
+        background: var(--articlecolor);
+        color: #fff;
+      }
+    }
+  }
+}

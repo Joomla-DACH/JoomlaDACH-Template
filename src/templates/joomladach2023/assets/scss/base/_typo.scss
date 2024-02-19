@@ -103,7 +103,22 @@
     border-radius: 13px;
     appearance: none;
   }
-
+  // iFrame
+  .iframecontainer {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    overflow: hidden;
+    iframe {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    &--16x9 {
+      aspect-ratio: 16 / 9;
+    }
+  }
   // Font-Size
   @each $size in $fs {
     .txt-#{$size} {

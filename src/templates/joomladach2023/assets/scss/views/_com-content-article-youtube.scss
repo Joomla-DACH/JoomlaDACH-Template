@@ -1,0 +1,15 @@
+@include critical(true) {
+  .item-page--youtube {
+    .page-header h1 {
+      color: var(--articlecolor);
+    }
+    .tags .btn {
+      background: var(--articlecolor);
+      color: #fff;
+    }
+    .iframecontainer {
+      margin: var(--space-xxlarge) 0;
+      border: 10px solid var(--articlecolor);
+    }
+  }
+}
