@@ -4,12 +4,11 @@
     <author>djumla GmbH</author>
     <version>1.0.0</version>
     <description>Modul zur Darstellung eines Bild-Text-Bereichs</description>
+    <namespace path="src">JoomlaDACH\Module\Imagetext</namespace>
     <files>
-        <filename>mod_imagetext.xml</filename>
-        <filename module="mod_imagetext.php">mod_imagetext.php</filename>
-        <filename>index.html</filename>
-        <filename>tmpl/default.php</filename>
-        <filename>tmpl/index.html</filename>>
+        <folder module="mod_imagetext">services</folder>
+        <folder>src</folder>
+        <folder>tmpl</folder>
     </files>
     <config>
         <fields name="params">

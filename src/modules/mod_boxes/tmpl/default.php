@@ -1,12 +1,5 @@
 <?php
 
-/**
- * @version    CVS: 1.0.0
- * @package    Mod_Grevenheader
- * @author     djumla GmbH, Lukas Jardin <info@djumla.de>
- * @copyright  2018 djumla GmbH
- * @license    GNU General Public License Version 2 oder später; siehe LICENSE.txt
- */
 
 // No direct access
 defined('_JEXEC') or die;

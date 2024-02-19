@@ -9,7 +9,9 @@
     <authorUrl>www.djumla.de</authorUrl>
     <version>1.0.0</version>
     <description>Injects the missing tag filter to category list parameters</description>
+    <namespace path="src">JoomlaDACH\Plugin\System\Articlelatesturl</namespace>
     <files>
-        <file plugin="articlelatesturl">articlelatesturl.php</file>
+        <file plugin="articlelatesturl">services</file>
+        <folder>src</folder>
     </files>
 </extension>

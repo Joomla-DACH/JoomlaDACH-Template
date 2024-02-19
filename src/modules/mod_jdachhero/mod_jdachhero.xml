@@ -3,13 +3,12 @@
     <name>Joomla DACH - JDACH Hero</name>
     <author>djumla GmbH</author>
     <version>1.0.0</version>
-    <description>Modul zur Darstellung des Headerbereichs</description>
+    <description>Modul zur Darstellung des Joomla.DACH Hero Bereichs</description>
+    <namespace path="src">JoomlaDACH\Module\Jdachhero</namespace>
     <files>
-        <filename>mod_jdachhero.xml</filename>
-        <filename module="mod_jdachhero.php">mod_jdachhero.php</filename>
-        <filename>index.html</filename>
-        <filename>tmpl/default.php</filename>
-        <filename>tmpl/index.html</filename>>
+        <folder module="mod_jdachhero">services</folder>
+        <folder>src</folder>
+        <folder>tmpl</folder>
     </files>
     <config>
         <fields name="params">
