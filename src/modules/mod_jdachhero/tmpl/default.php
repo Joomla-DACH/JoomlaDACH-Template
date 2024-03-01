@@ -16,5 +16,5 @@ defined('_JEXEC') or die;
           <?php endforeach; ?>
       </div>
   </div>
-  <img src="<?php echo $params->get('image'); ?>" class="jdachhero__image" />
+  <img src="<?php echo $params->get('image'); ?>" class="jdachhero__image" alt="" />
 </div>

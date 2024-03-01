@@ -51,7 +51,13 @@ endif; ?>
 
 
 <a class="item-imagecontainer" href="<?php echo $link; ?>">
-    <?php echo LayoutHelper::render('joomla.content.intro_image', $this->item); ?>
+    <?php if (json_decode($this->item->images)->image_intro): ?>
+        <?php echo LayoutHelper::render('joomla.content.intro_image', $this->item); ?>
+    <?php else: ?>
+        <figure class="left item-image placeholder">
+            <img src="<?php echo Uri::base(); ?>templates/joomladach2023/assets/img/logomark.svg" width="47" height="47" loading="lazy">
+        </figure>
+    <?php endif; ?>
 </a>
 <div class="item-content">
     <?php if ($isUnpublished) : ?>
