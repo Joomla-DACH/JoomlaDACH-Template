@@ -23,6 +23,8 @@ $this->setGenerator(null);
 // Add Meta Information
 $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 
+$uri = \Joomla\CMS\Uri\Uri::getInstance();
+
 ?>
 <!doctype html>
 <html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
@@ -41,6 +43,11 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
     <link rel="manifest" href="<?php echo $templatePath . '/favicon_package'; ?>/site.webmanifest">
     <meta name="msapplication-TileColor" content="#1c243e">
     <meta name="theme-color" content="#ffffff">
+
+    <link href="<?php echo $uri->toString(['scheme', 'user', 'pass', 'host', 'port', 'path', 'query', 'fragment']); ?>" rel="canonical" />
+    <link href="https://www.joomla.de<?php echo $uri->toString(['path', 'query', 'fragment']); ?>" rel="alternate" hreflang="de-de" />
+    <link href="https://www.joomla.at<?php echo $uri->toString(['path', 'query', 'fragment']); ?>" rel="alternate" hreflang="de-at" />
+    <link href="https://www.joomla.ch<?php echo $uri->toString(['path', 'query', 'fragment']); ?>" rel="alternate" hreflang="de-ch" />
   </head>
   <body class="<?php echo $pageclass ? htmlspecialchars($pageclass) : 'default'; ?>">
     <header class="headerbar">

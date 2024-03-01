@@ -130,16 +130,46 @@ switch ($attributes->vlog_cat) {
             echo $this->item->toc;
         endif; ?>
       <div itemprop="articleBody" class="com-content-article__body">
-        <div class="iframecontainer iframecontainer--16x9">
+        <div class="iframecontainer iframecontainer--16x9" style="display:none">
           <iframe
             width="560"
             height="315"
-            src="https://www.youtube-nocookie.com/embed/<?php echo($attributes->youtube_id);?>"
-            title="YouTube video player" frameborder="0"
+            data-src="https://www.youtube-nocookie.com/embed/<?php echo($attributes->youtube_id);?>"
+            title="YouTube video player"
+            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
+            allowfullscreen
+            class="item-page--youtube--iframe"
+          >
           </iframe>
         </div>
+        <div>
+          <button type="button" class="item-page--youtube--button btn btn--primary">
+              YouTube aktivieren
+          </button>
+          <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              const iframeContainer = document.querySelector('.item-page--youtube .iframecontainer')
+              const iframe = document.querySelector('.item-page--youtube--iframe')
+              const button = document.querySelector('.item-page--youtube--button')
+
+              const enableYt = () => {+
+                console.log('called')
+                iframe.setAttribute('src', iframe.getAttribute('data-src'))
+                iframeContainer.style.display = 'block'
+                button.remove()
+                window.localStorage.setItem('youtubeconsent', 1)
+              }
+
+              button.addEventListener('click', enableYt)
+
+              if (window.localStorage.getItem('youtubeconsent')) {
+                enableYt()
+              }
+            });
+          </script>
+        </div>
+        <div>
           <?php if(!empty($attributes->youtube_desc)): ?>
               <?php echo nl2br($attributes->youtube_desc);?>
           <?php else: ?>

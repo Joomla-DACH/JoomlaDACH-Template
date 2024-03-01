@@ -43,9 +43,11 @@ foreach ($customFields as $customField)
 <div class="com-content-article serviceproviderpage item-page<?php echo $this->pageclass_sfx; ?>" itemscope itemtype="https://schema.org/Article">
   <meta itemprop="inLanguage" content="<?php echo ($this->item->language === '*') ? Factory::getApplication()->get('language') : $this->item->language; ?>">
     <div class="serviceproviderpage__imagearea">
-        <div class="serviceproviderpage__imagearea-content">
-          <img src="<?php echo json_decode($this->item->images)->image_intro ;?>" alt="Logo <?php echo $this->escape($this->item->title); ?>" />
-        </div>
+        <?php if (json_decode($this->item->images)->image_intro): ?>
+            <div class="serviceproviderpage__imagearea-content">
+              <img src="<?php echo json_decode($this->item->images)->image_intro ;?>" alt="Logo <?php echo $this->escape($this->item->title); ?>" />
+            </div>
+        <?php endif; ?>
     </div>
     <div class="com-content-article__contentcontainer">
         <?php if ($this->params->get('show_page_heading')) : ?>
