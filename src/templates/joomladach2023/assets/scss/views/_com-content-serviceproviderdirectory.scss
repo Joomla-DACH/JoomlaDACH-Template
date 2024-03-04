@@ -4,6 +4,7 @@
       display: grid;
       grid-template-columns: 100%;
       grid-gap: 0;
+      align-content: start;
       &:first-child {
         padding-top: var(--space-xlarge);
         @include md {
@@ -17,11 +18,14 @@
         padding: var(--space-large);
         margin-bottom: var(--space-large);
         aspect-ratio: 3 / 1;
-        background: var(--jdach-green);
+        background: var(--jdach-muted);
         border-radius: 8px;
         &:hover {
-          .item-image img {
-            transform: scale(1);
+          .item-image {
+            border-radius: 100vh;
+            img {
+              transform: scale(1.1);
+            }
           }
         }
         .item-image {
@@ -40,11 +44,10 @@
             height: auto;
             object-fit: contain;
             aspect-ratio: initial;
-
+            transform-origin: center;
           }
           &.placeholder img {
-            filter: grayscale(1);
-            width: 50%
+            width: 35%
           }
         }
       }
