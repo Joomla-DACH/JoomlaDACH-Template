@@ -130,5 +130,10 @@
     &__pagination {
       margin-top: var(--space-xxlarge);
     }
+    &.blog--croppimages {
+      .item-imagecontainer .item-image img {
+        aspect-ratio: initial;
+      }
+    }
   }
 }
