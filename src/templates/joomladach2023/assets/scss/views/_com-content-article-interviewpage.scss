@@ -1,0 +1,26 @@
+@include critical(true) {
+  .interviewpage {
+    .item-image {
+      padding: var(--space-xxxlarge) var(--space-large);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 400px;
+      background: var(--jdach-muted);
+      @include lg {
+        padding-bottom: calc(var(--space-xxxlarge) * 2);
+      }
+      @include xl {
+        padding-bottom: calc((var(--contentcontainerwidth) - var(--maxcontentwidth)) * 0.5 + var(--space-xxxlarge));
+      }
+      img {
+        aspect-ratio: 1 / 1;
+        width: auto;
+        height: auto;
+        min-height: 0;
+        border-radius: 100vh;
+        max-width: 600px;
+      }
+    }
+  }
+}

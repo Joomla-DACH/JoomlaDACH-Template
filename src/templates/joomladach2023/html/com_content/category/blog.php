@@ -33,8 +33,13 @@ $afterDisplayContent = trim(implode("\n", $results));
 
 $htag    = $this->params->get('show_page_heading') ? 'h2' : 'h1';
 
+$customFields = $this->category->jcfields;
+foreach ($customFields as $customField)
+{
+    $customFields[$customField->name] = $customField;
+}
 ?>
-<div class="com-content-category-blog blog" itemscope itemtype="https://schema.org/Blog">
+<div class="com-content-category-blog blog <?php echo ($customFields['removeimagecropping']->rawvalue == 'cropped') ? 'blog--croppimages' : ''?>" itemscope itemtype="https://schema.org/Blog">
     <?php if ($this->params->get('show_description_image') && $this->category->getParams()->get('image')) : ?>
       <div class="com-content-category-blog__image">
           <?php echo LayoutHelper::render(
