@@ -120,6 +120,10 @@
         }
       }
 
+      > .btn {
+        margin-bottom: var(--space-small);
+      }
+
 
       joomla-field-fancy-select {
         > .choices {
