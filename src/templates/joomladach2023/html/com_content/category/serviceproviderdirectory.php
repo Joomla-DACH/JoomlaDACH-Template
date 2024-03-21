@@ -143,3 +143,38 @@ $htag    = $this->params->get('show_page_heading') ? 'h2' : 'h1';
         <?php endif; ?>
     </div>
 </div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const regionFilters = document.querySelectorAll('select[id*="_region_"]');
+
+      const watchRegionFilters = () => {
+        let selectedFilter = false
+
+        for (let regionFilter of regionFilters) {
+          if (regionFilter.value !== '') {
+            selectedFilter = regionFilter
+
+            break
+          }
+        }
+
+        regionFilters.forEach((filter) => {
+          console.log(selectedFilter)
+          if (filter === selectedFilter) {
+            return
+          }
+
+          if (selectedFilter !== false) {
+            filter.setAttribute('disabled', 'disabled')
+
+            return
+          }
+
+          filter.removeAttribute('disabled')
+        })
+      }
+
+      regionFilters.forEach((filter) => filter.addEventListener('change', watchRegionFilters))
+      watchRegionFilters()
+    })
+</script>
