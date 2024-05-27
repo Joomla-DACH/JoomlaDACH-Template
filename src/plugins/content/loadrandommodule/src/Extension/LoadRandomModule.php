@@ -27,8 +27,6 @@ final class LoadRandomModule extends CMSPlugin
 {
     protected static $modules = [];
 
-    protected static $mods = [];
-
     /**
      * Plugin that loads module positions within content
      *
