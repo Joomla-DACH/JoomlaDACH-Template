@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="plugin" group="content" method="upgrade">
+	<name>Content - Load Random Module</name>
+	<author>David Jardin | djumla GmbH</author>
+	<creationDate>May 2024</creationDate>
+	<copyright>(C) David Jardin - djumla GmbH. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later; see LICENSE.txt</license>
+	<authorEmail>info@djumla.de</authorEmail>
+	<authorUrl>www.djumla.de</authorUrl>
+	<version>1.0.0</version>
+	<description>Loads a random module from a provided module position</description>
+	<namespace path="src">JoomlaDACH\Plugin\Content\LoadRandomModule</namespace>
+	<files>
+		<folder plugin="loadrandommodule">services</folder>
+		<folder>src</folder>
+	</files>
+</extension>
