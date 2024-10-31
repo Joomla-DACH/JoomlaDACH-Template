@@ -44,7 +44,6 @@ $uri = \Joomla\CMS\Uri\Uri::getInstance();
     <meta name="msapplication-TileColor" content="#1c243e">
     <meta name="theme-color" content="#ffffff">
 
-    <link href="<?php echo $uri->toString(['scheme', 'user', 'pass', 'host', 'port', 'path', 'query', 'fragment']); ?>" rel="canonical" />
     <link href="https://www.joomla.de<?php echo $uri->toString(['path', 'query', 'fragment']); ?>" rel="alternate" hreflang="de-de" />
     <link href="https://www.joomla.at<?php echo $uri->toString(['path', 'query', 'fragment']); ?>" rel="alternate" hreflang="de-at" />
     <link href="https://www.joomla.ch<?php echo $uri->toString(['path', 'query', 'fragment']); ?>" rel="alternate" hreflang="de-ch" />
