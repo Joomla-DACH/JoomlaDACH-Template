@@ -29,6 +29,16 @@
       color: #fff;
     }
   }
+  .advent-bg {
+    padding: .5rem;
+    background-image: url(../../../../../images/adventskalender/ai-generated-9192825_1920.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    .mod-articles-advent-item-content {
+      box-shadow: 3px 3px 3px rgba(255, 255, 255, 0.5);
+      border: 1px solid #d5d5d5;
+    }
+  }
   @media (max-width: 768px) {
     .advent-grid {
       grid-template-columns: repeat(3,minmax(80px,1fr));
