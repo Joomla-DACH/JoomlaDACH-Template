@@ -41,15 +41,11 @@ $today = Factory::getDate()->format('Y-m-d');
 
 		// Ensure the adventdate field exists and is a valid date
 		$adventDate = isset($jcfields['adventdate']) ? date('Y-m-d', strtotime($jcfields['adventdate']->value)) : null;
-
-		// Set up popup options
-		$popupOptions['src'] = Route::_('index.php?view=article&layout=modal&tmpl=component&id=' . $item->id, false);
-		$popupOptions['textHeader'] = $item->title;
 		?>
 
         <div class="mod-articles-advent-item-content">
 			<?php if ($adventDate && $adventDate <= $today) : ?>
-                <a href="<?php echo Route::_('index.php?view=article&id=' . $item->id); ?>"
+                <a href="<?php echo Route::_(RouteHelper::getArticleRoute($item->slug, $item->catid, $item->language)); ?>"
                         class="advent-link"
                         aria-label="Öffnet <?php echo $item->title; ?>">
                     <span><?php echo date('j', strtotime($adventDate)); ?></span>
