@@ -41,10 +41,6 @@ $today = Factory::getDate()->format('Y-m-d');
 
 		// Ensure the adventdate field exists and is a valid date
 		$adventDate = isset($jcfields['adventdate']) ? date('Y-m-d', strtotime($jcfields['adventdate']->value)) : null;
-
-		// Set up popup options
-		$popupOptions['src'] = Route::_('index.php?view=article&layout=modal&tmpl=component&id=' . $item->id, false);
-		$popupOptions['textHeader'] = $item->title;
 		?>
 
         <div class="mod-articles-advent-item-content">
