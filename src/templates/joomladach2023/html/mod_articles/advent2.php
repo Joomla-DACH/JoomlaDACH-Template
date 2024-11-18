@@ -13,6 +13,7 @@ use Joomla\CMS\Factory;
 use Joomla\CMS\Layout\LayoutHelper;
 use Joomla\Component\Fields\Administrator\Helper\FieldsHelper;
 use Joomla\CMS\Router\Route;
+use Joomla\CMS\Router\RouteHelper;
 
 if (!$list) {
 	return;
