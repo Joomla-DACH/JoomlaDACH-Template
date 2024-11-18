@@ -45,7 +45,7 @@ $today = Factory::getDate()->format('Y-m-d');
 
         <div class="mod-articles-advent-item-content">
 			<?php if ($adventDate && $adventDate <= $today) : ?>
-                <a href="<?php echo Route::_('index.php?view=article&id=' . $item->id); ?>"
+                <a href="<?php echo Route::_(RouteHelper::getArticleRoute($item->slug, $item->catid, $item->language)); ?>"
                         class="advent-link"
                         aria-label="Öffnet <?php echo $item->title; ?>">
                     <span><?php echo date('j', strtotime($adventDate)); ?></span>
