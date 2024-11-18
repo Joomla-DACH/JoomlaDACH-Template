@@ -11,9 +11,9 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\Layout\LayoutHelper;
-use Joomla\Component\Fields\Administrator\Helper\FieldsHelper;
 use Joomla\CMS\Router\Route;
-use Joomla\CMS\Router\RouteHelper;
+use Joomla\Component\Content\Site\Helper\RouteHelper;
+use Joomla\Component\Fields\Administrator\Helper\FieldsHelper;
 
 if (!$list) {
 	return;
