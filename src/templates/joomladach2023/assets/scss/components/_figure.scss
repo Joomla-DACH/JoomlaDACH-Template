@@ -1,0 +1,22 @@
+@include critical(true) {
+
+  figure.image {
+      margin: var(--space-base) 0;
+      padding: var(--space-small);
+      border: 1px solid #ddd;
+      border-radius: var(--space-small);
+      background-color: #ffff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    img {
+      max-width: 100%;
+      border-radius: 5px;
+    }
+    figcaption {
+      margin-top: 10px;
+      font-size: var(--size-sm);
+      color: #555;
+      font-style: italic;
+    }
+  }
+}
