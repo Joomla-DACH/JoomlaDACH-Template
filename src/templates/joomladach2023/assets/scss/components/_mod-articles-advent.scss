@@ -1,47 +1,45 @@
 @include critical(false) {
   .advent-grid {
     display: grid;
-    grid-template-columns: repeat(6,minmax(100px,1fr));
     gap: .5rem;
-    figure {
-      margin: 0;
+    grid-template-columns: repeat(3,minmax(80px,1fr));
+    @include md {
+      grid-template-columns: repeat(6,minmax(100px,1fr));
     }
-    .advent-link {
-      padding: 0;
-      text-decoration: none;
-      color: currentColor;
-      width: 100%;
-      height: 100%;
+    &.advent-bg {
+      padding: .5rem;
+      background-image: url(../../../../../images/adventskalender/ai-generated-9192825_1920.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
     }
     .mod-articles-advent-item-content {
       aspect-ratio: 1;
       transition: all .2s ease-in-out;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.16);
-      &:hover {
-        transform: scale(1.025);
+      span,a {
+        font-size: 4rem;
+        color: #fff;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        transition: .25s ease-in-out;
+        border: 1px dashed #d5d5d5;
+        border-radius: 4px;
       }
-    }
-    span {
-      font-size: 4rem;
-      color: #fff;
-    }
-  }
-  .advent-bg {
-    padding: .5rem;
-    background-image: url(../../../../../images/adventskalender/ai-generated-9192825_1920.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    .mod-articles-advent-item-content {
-      box-shadow: 3px 3px 3px rgba(255, 255, 255, 0.5);
-      border: 1px solid #d5d5d5;
-    }
-  }
-  @media (max-width: 768px) {
-    .advent-grid {
-      grid-template-columns: repeat(3,minmax(80px,1fr));
+      span {
+        align-items: center;
+      }
+      > span {
+        background: rgba(0,0,0,.75);
+        mix-blend-mode: multiply;
+      }
+      > a {
+        &:hover,
+        &:focus {
+          transform: scale(1.1);
+        }
+      }
     }
   }
 }
