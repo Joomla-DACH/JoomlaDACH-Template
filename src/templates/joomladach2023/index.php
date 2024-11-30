@@ -135,5 +135,6 @@ $uri = \Joomla\CMS\Uri\Uri::getInstance();
     </footer>
     <jdoc:include type="modules" name="debug" />
     <jdoc:include type="styles" />
+    <a rel="me" href="https://joomla.social/@joomla_de" style="display:none;">Mastodon</a>
   </body>
 </html>
