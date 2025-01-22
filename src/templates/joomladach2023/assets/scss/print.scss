@@ -1,0 +1,87 @@
+@media print {
+    header, .footer__main, nav, .com-content-article .item-image {
+      display: none;
+    }
+    /* Font auf 16px/13pt setzen, Background auf weiss und Schrift auf schwarz setzen.*/
+    /* Das spart Tinte */
+    body {
+      margin: .8cm .3cm;
+      overflow: auto;
+      font-size: 13pt;
+      line-height: 1.4;
+      color: #000;
+      background: #fff !important;
+    }
+    h1 {
+      font-size: 24pt;
+      color: #000;
+    }
+    h2, h3, h4 {
+      margin-top: 25px;
+      font-size: 14pt;
+      color: #000;
+    }
+    /* Alle Seitenumbrueche definieren */
+    a {
+      page-break-inside: avoid;
+    }
+    blockquote {
+      page-break-inside: avoid;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      page-break-after: avoid;
+      page-break-inside: avoid;
+    }
+    img {
+      page-break-inside: avoid;
+      page-break-after: avoid;
+    }
+    table, pre {
+      page-break-inside: avoid;
+    }
+    ul, ol, dl {
+      page-break-before: avoid;
+    }
+    /* Linkfarbe und Linkverhalten darstellen */
+    a:link, a:visited, a {
+      color: var(--jdach-lightblue);
+      text-align: left;
+      text-decoration: underline;
+      background: transparent;
+    }
+    a[href^=http]:after {
+      content: "";
+    }
+    article a[href^="#"]:after {
+      content: "";
+    }
+    a:not(:local-link):after {
+      content: " <" attr(href) "> ";
+    }
+    .main__content,
+    .main__content > *,
+    .main__content > * > *,
+    .contentcontainer {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      padding: 0;
+      overflow: auto;
+    }
+    main {
+      background-color: #fff;
+      margin-top: 0;
+    }
+    .com-content-article__contentcontainer {
+        border-radius: 0;
+        padding: 0;
+        margin-top: 0;
+    }
+    .footer {
+        margin-top: 0;
+    }
+    .footer__bottom.bg-darkblue {
+        background-color: #fff;
+        color: #000;
+    }
+}
