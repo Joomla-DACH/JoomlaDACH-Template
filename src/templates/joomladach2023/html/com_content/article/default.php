@@ -11,6 +11,7 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
+use Joomla\CMS\Helper\ModuleHelper;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Associations;
 use Joomla\CMS\Language\Text;
@@ -38,6 +39,13 @@ $isExpired         = !is_null($this->item->publish_down) && $this->item->publish
   <meta itemprop="inLanguage" content="<?php echo ($this->item->language === '*') ? Factory::getApplication()->get('language') : $this->item->language; ?>">
   <?php echo LayoutHelper::render('joomla.content.full_image', $this->item); ?>
     <div class="com-content-article__contentcontainer">
+
+        <?php
+        foreach (ModuleHelper::getModules('breadcrumbs') as $module) {
+            echo ModuleHelper::renderModule($module);
+        }
+        ?>
+
         <?php if ($this->params->get('show_page_heading')) : ?>
           <div class="page-header">
             <h1> <?php echo $this->escape($this->params->get('page_heading')); ?> </h1>

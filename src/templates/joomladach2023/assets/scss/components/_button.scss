@@ -51,6 +51,9 @@
     --hovercolor: #fff;
     --bordercolor: var(--jdach-lightblue);
     --borderhovercolor: var(--jdach-darkblue);
+    .bg-darkblue & {
+      --borderhovercolor: #fff;
+    }
   }
   .btn--darkblue,
   .btn--secondary,

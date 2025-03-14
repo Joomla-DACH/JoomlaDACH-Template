@@ -32,6 +32,11 @@
                     label="Titel"
                     filter="safehtml" />
                 <field
+                    name="subtitle"
+                    type="text"
+                    label="Subtitel"
+                    filter="safehtml" />
+                <field
                     name="image"
                     type="media"
                     label="Bild"

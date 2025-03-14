@@ -17,6 +17,14 @@
     }
     h1 {
       color: var(--sectioncolor);
+
+      > span {
+        display: block;
+      }
+
+      .jdachhero__subtitle {
+        font-size: .8em;
+      }
     }
     &.bg-darkblue {
       --sectioncolor: var(--jdach-lightblue)

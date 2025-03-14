@@ -20,6 +20,7 @@ use Joomla\CMS\Router\Route;
 use Joomla\CMS\Uri\Uri;
 use Joomla\Component\Content\Administrator\Extension\ContentComponent;
 use Joomla\Component\Content\Site\Helper\RouteHelper;
+use Joomla\Utilities\ArrayHelper;
 
 // Create shortcuts to some parameters.
 $params  = $this->item->params;
@@ -44,8 +45,22 @@ foreach ($customFields as $customField)
   <meta itemprop="inLanguage" content="<?php echo ($this->item->language === '*') ? Factory::getApplication()->get('language') : $this->item->language; ?>">
     <div class="serviceproviderpage__imagearea">
         <?php if (json_decode($this->item->images)->image_intro): ?>
+            <?php
+            $img = HTMLHelper::_('cleanImageURL', json_decode($this->item->images)->image_intro);
+
+            $dimensions = [];
+
+            if(!empty($img->attributes['width'])) {
+                $dimensions['width']  = $img->attributes['width'];
+            }
+
+            if(!empty($img->attributes['height'])) {
+                $dimensions['height']  = $img->attributes['height'];
+            }
+
+            ?>
             <div class="serviceproviderpage__imagearea-content">
-              <img src="<?php echo json_decode($this->item->images)->image_intro ;?>" alt="Logo <?php echo $this->escape($this->item->title); ?>" />
+              <img src="<?php echo $this->escape($img->url) ;?>" alt="Logo <?php echo $this->escape($this->item->title); ?>" <?php echo ArrayHelper::toString($dimensions); ?> />
             </div>
         <?php endif; ?>
     </div>
