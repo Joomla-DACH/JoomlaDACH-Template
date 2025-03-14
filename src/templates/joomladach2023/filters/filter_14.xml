@@ -2,25 +2,7 @@
 <form addfieldprefix="Dionysopoulos\Plugin\System\FilterMagic\Field">
     <fields name="filter">
         <field
-            name="region-de"
-            type="custom"
-            customfield="1"
-            default=""
-            class=""
-            layout="joomla.form.field.list"
-        >
-        </field>
-        <field
-            name="region-at"
-            type="custom"
-            customfield="1"
-            default=""
-            class=""
-            layout="joomla.form.field.list"
-        >
-        </field>
-        <field
-            name="region-ch"
+            name="land"
             type="custom"
             customfield="1"
             default=""
