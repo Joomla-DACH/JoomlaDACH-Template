@@ -11,7 +11,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-merge": "^0.1.1",
     "gulp-sass": "^5.1.0",
-    "gulp-sourcemaps": "^2.6.5",
+    "gulp-sourcemaps": "^3.0.0",
     "gulp-strip-comments": "^2.5.2",
     "jquery": "^3.6.4",
     "lib-sass-data-uri": "0.0.5",
