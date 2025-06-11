@@ -15,11 +15,10 @@
     "gulp-strip-comments": "^2.5.2",
     "jquery": "^3.6.4",
     "lib-sass-data-uri": "0.0.5",
-    "node-sass": "^8.0.0",
     "sass": "^1.62.0"
   },
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "gulp": "^5.0.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
