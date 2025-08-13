@@ -154,7 +154,12 @@ class Dynamicversion extends CMSPlugin implements SubscriberInterface
     public function getReleaseInfo()
     {
         $httpClient = HttpFactory::getHttp();
-        $response = $httpClient->get(self::VERSION_API);
+
+        try {
+            $response = $httpClient->get(self::VERSION_API);
+        } catch (\Throwable) {
+            return [];
+        }
 
         $releases = json_decode($response->getBody(), true)['releases'];
 
