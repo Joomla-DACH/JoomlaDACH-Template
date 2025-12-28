@@ -191,7 +191,18 @@ foreach ($customFields as $customField)
                     <span><?php echo $customFields['kontakt-name']->value ;?></span><br/>
               <?php endif; ?>
               <?php if ($customFields['kontakt-e-mail']->value): ?>
-                    <a href="mailto:<?php echo $customFields['kontakt-e-mail']->rawvalue ;?>" target="_blank" title="<?php echo $customFields['kontakt-e-mail']->rawvalue ;?>"><?php echo $customFields['kontakt-e-mail']->rawvalue ;?></a><br/>
+                  <?php
+                    // Run through onContentPrepare to cloak mail address
+
+                      $app = Factory::getApplication();
+
+                      $dummyContent = (object) [
+                        'text' => sprintf('<a href="mailto:%s" target="_blank">%s</a><br/>', $customFields['kontakt-e-mail']->rawvalue, $customFields['kontakt-e-mail']->rawvalue)
+                      ];
+                      $app->triggerEvent('onContentPrepare', ['com_content.article', &$dummyContent, &$this->params, 0]);
+
+                      echo $dummyContent->text;
+                  ?>
               <?php endif; ?>
               <?php if ($customFields['telefon']->value): ?>
                     <a href="tel:<?php echo $customFields['telefon']->value ;?>" target="_blank" title="<?php echo $customFields['telefon']->value ;?>"><?php echo $customFields['telefon']->value ;?></a>
